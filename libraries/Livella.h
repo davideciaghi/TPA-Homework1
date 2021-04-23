@@ -43,7 +43,8 @@
       struct Plate {
         
         float spessore;
-        float lunghezza;       
+        float lunghezza;
+        float cd;       
     };
 
 
@@ -76,6 +77,6 @@ float Plate_angle (Piston * mypiston1, Piston * mypiston2);
      * @param dimy: dimensione verticale delle cerniere dell'elemento prismatico
      * 
      */
-    Plate * plate_init (float spess, float lung);
+    Plate * plate_init (float spess, float lung, Piston * mypiston1, Piston * mypiston2);
 
 #endif

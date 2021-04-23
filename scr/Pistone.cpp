@@ -45,7 +45,7 @@ Piston* piston_init (float posx, float posy, float alt1, float larg1, float alt2
 
 }
 
-Plate* plate_init (float spess, float lungh){
+Plate* plate_init (float spess, float lungh, float a) {
 
     // Creo l'istanza della piastra
     Plate * plateC  = new Plate;
@@ -53,6 +53,10 @@ Plate* plate_init (float spess, float lungh){
     // Associo le grandezze in input alle relative grandezze della struct
     plateC->spessore = spess;
     plateC->lunghezza = lungh;
+    plateC->cd = a;
+
+
+
 
     // Ritorno l'oggetto della piastra inizializzato
     return plateC;
