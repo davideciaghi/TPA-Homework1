@@ -44,12 +44,12 @@
         
         float spessore;
         float lunghezza;
-        float cd;       
+        float xC;
+        float yC;
+        float angle;    
     };
 
 
-
-float Plate_angle (Piston * mypiston1, Piston * mypiston2);
 
     
     /*
@@ -78,5 +78,9 @@ float Plate_angle (Piston * mypiston1, Piston * mypiston2);
      * 
      */
     Plate * plate_init (float spess, float lung, Piston * mypiston1, Piston * mypiston2);
+
+
+    void info_parti ( Piston * mypiston1, Piston * mypiston2, Plate * myplate );
+
 
 #endif

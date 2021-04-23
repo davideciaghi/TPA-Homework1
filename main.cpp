@@ -10,8 +10,6 @@ int main() {
     Plate * myplate;
 
     cout << "Distanza fissa tra i pistoni di: 350" << endl;
-    cout << "Spessore della piastra di: 30" << endl;
-    cout << "Larghezza della piastra di: 500" << endl;
 
     //                       posx  posy  alt1 larg1  alt1  larg1
     mypiston1 = piston_init( 100,  400,  150,  50,   100,   20);
@@ -19,10 +17,13 @@ int main() {
 
     myplate = plate_init(30, 500, mypiston1, mypiston2);
 
-    float angolo = Plate_angle(mypiston1, mypiston2);
 
-    cout << "Angolo: " << angolo << endl;
+    // Informazioni sulle parti del meccanismo
+    cout << "Informazioni su pistoni e piastra:" << endl;
+    info_parti( mypiston1, mypiston2, myplate );
 
-    return EXIT_SUCCESS;
+     guida_to_SVG( mypiston1, mypiston2, myplate, "test");
+
+    return 0;
 
 }
