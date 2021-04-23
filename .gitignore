@@ -1,1 +1,4 @@
-File .gitignore
+/cmake-build-*/
+/.vscode/
+/.idea/
+/build/
