@@ -1,14 +1,30 @@
-File pistone.svg
+
+
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+  
+  <rect  x="115" y="300" width="20" height="100" style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(0,0,0)" />    
+  <rect  x="100" y="400" width="50" height="150" style="fill:rgb(0,200,0);stroke-width:3;stroke:rgb(0,0,0)" />    
+  
 
-  <rect  x="405" y="280" width="40" height="20" style="fill:rgb(0,200,0);stroke-width:3;stroke:rgb(0,0,0)" />  
-
-  <rect  x="415" y="300" width="20" height="100" style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(0,0,0)" />    
-
-  <rect  x="400" y="400" width="50" height="150" style="fill:rgb(0,200,0);stroke-width:3;stroke:rgb(0,0,0)" />    
-
-  <text x="415" y="580" fill="black">50</text>
+  <rect  x="515" y="350" width="20" height="50" style="fill:rgb(200,200,200);stroke-width:3;stroke:rgb(0,0,0)" />    
+  <rect  x="500" y="400" width="50" height="150" style="fill:rgb(0,200,0);stroke-width:3;stroke:rgb(0,0,0)" />    
+  
+   
+  <g transform="rotate(7,400,215)"> <!-- rotation around the point 400,215 -->
+  	<rect  x="90" y="308" width="500" height="30" style="fill:rgb(0,120,0);stroke-width:3;stroke:rgb(200,200,200)" />  
+    <rect  x="90" y="280" width="500" height="0.1" style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)" />  
+    <text  x="350" y="250" fill="white">4 m</text>
+  </g>
+  
+  <circle cx="125" cy="290" r="20" stroke="black" stroke-width="3" fill="lightgrey" />
+  <circle cx="525" cy="340" r="20" stroke="black" stroke-width="3" fill="lightgrey" />
+  
+  <rect x="100" y="590" width="50" height="0.1" style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)" />  
+  <text x="115" y="580" fill="white">50</text>
+  <rect x="500" y="590" width="50" height="0.1" style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)" />  
+  <text x="515" y="580" fill="white">50</text>
 
 </svg>
+
