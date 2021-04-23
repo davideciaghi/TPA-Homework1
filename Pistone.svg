@@ -10,7 +10,7 @@
   <rect  x="500" y="400" width="50" height="150" style="fill:rgb(0,200,0);stroke-width:3;stroke:rgb(0,0,0)" />    
   
    
-  <g transform="rotate(7,400,215)"> <!-- rotation around the point 400,215 -->
+  <g transform="rotate(7,400,215)"> 
   	<rect  x="90" y="308" width="500" height="30" style="fill:rgb(0,120,0);stroke-width:3;stroke:rgb(200,200,200)" />  
     <rect  x="90" y="280" width="500" height="0.1" style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)" />  
     <text  x="350" y="250" fill="white">4 m</text>

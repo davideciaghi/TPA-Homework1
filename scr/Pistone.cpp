@@ -19,7 +19,7 @@ Piston* piston_init (float posx, float posy, float alt1, float larg1, float alt2
     pistonC->pos_x1 = posx;
     pistonC->pos_y1 = posy;
 
-    pistonC->pos_x2 = posx + ((larg1 + larg2)/2);
+    pistonC->pos_x2 = posx + ((larg1 - larg2)/2);
     pistonC->pos_y2 = posy - alt2;
 
     // Centri delle coppie rotoidali
@@ -79,4 +79,50 @@ void info_parti ( Piston * mypiston1, Piston * mypiston2, Plate * myplate ){
     cout << "Lunghezza piastra: \t\t 500" << endl;
     cout << "Angolo di inclinazione: \t\t" << myplate->angle << endl;
 
+}
+
+
+
+void livella_to_svg (Piston * mypiston1, Piston * mypiston2, Plate * myplate, string fileName ){
+
+    ofstream mySVG( fileName + ".svg");
+    
+    mySVG << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>" << endl;
+
+    mySVG << "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"800\" height=\"600\">" << endl;
+
+    mySVG << livella_to_ParamSVG( mypiston1, mypiston2, myplate );
+
+    mySVG << "</svg>";
+
+    mySVG.close();
+
+}
+
+
+string livella_to_ParamSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myplate ){
+
+    string str = "";
+    
+    // Pistone di Sinistra
+    str += "<rect  x=\"" + to_string(mypiston1->pos_x2) + "\" y=\"" + to_string(mypiston1->pos_y2) + "\" width=\"" + to_string(mypiston1->larg_2) + "\" height=\"" + to_string(mypiston1->alt_2) +  "\" style=\"fill:rgb(200,200,200);stroke-width:3;stroke:rgb(0,0,0)\" /> \n";
+    str += "<rect  x=\"" + to_string(mypiston1->pos_x1) + "\" y=\"" + to_string(mypiston1->pos_y1) + "\" width=\"" + to_string(mypiston1->larg_1) + "\" height=\"" + to_string(mypiston1->alt_1) +  "\" style=\"fill:rgb(0,200,0);stroke-width:3;stroke:rgb(0,0,0)\" /> \n";
+
+    // Pistone di Destra
+    str += "<rect  x=\"" + to_string(mypiston2->pos_x2) + "\" y=\"" + to_string(mypiston2->pos_y2) + "\" width=\"" + to_string(mypiston2->larg_2) + "\" height=\"" + to_string(mypiston2->alt_2) +  "\" style=\"fill:rgb(200,200,200);stroke-width:3;stroke:rgb(0,0,0)\" /> \n";
+    str += "<rect  x=\"" + to_string(mypiston2->pos_x1) + "\" y=\"" + to_string(mypiston2->pos_y1) + "\" width=\"" + to_string(mypiston2->larg_1) + "\" height=\"" + to_string(mypiston2->alt_1) +  "\" style=\"fill:rgb(0,200,0);stroke-width:3;stroke:rgb(0,0,0)\" /> \n";
+    
+    // Lastra:
+    str += "<g transform=\"rotate(" + to_string(myplate->angle) + "," + to_string(myplate->xC) + "," + to_string(myplate->yC) + ")\"> \n";
+    str += "<rect  x=\"90\" y=\"308\" width=\"" + to_string(myplate->lunghezza) + "\" height=\"" + to_string(myplate->spessore) + "\" style=\"fill:rgb(0,120,0);stroke-width:3;stroke:rgb(200,200,200)\" /> \n";
+    str += "<rect  x=\"90\" y=\"280\" width=\"" + to_string(myplate->lunghezza) + "\" height=\"0.1\"" + " style=\"fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)\" /> \n";
+
+    str += "</g> \n";
+  
+
+
+
+    // Coppie rotoidali:
+
+    return str;
 }

@@ -1,6 +1,6 @@
-#ifndef _GUIDA_PRISMATICA_H_
+#ifndef LIVELLA
 
-    #define _GUIDA_PRISMATICA_H_
+    #define LIVELLA
 
     #include <iostream>
 
@@ -81,6 +81,12 @@
 
 
     void info_parti ( Piston * mypiston1, Piston * mypiston2, Plate * myplate );
+
+
+    void livella_to_svg (Piston * mypiston1, Piston * mypiston2, Plate * myplate, std::string fileName );
+
+
+    std::string livella_to_ParamSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myplate );
 
 
 #endif
