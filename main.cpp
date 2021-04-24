@@ -28,7 +28,10 @@ int main() {
 
     string NameFile = "ProvaSVG";
 
-    livella_to_svg( mypiston1, mypiston2, myplate, NameFile);
+    livella_to_svg(mypiston1, mypiston2, myplate, NameFile);
+
+
+    livella_distroy(mypiston1, mypiston2, myplate);
 
     return 0;
 
