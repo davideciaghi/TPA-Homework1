@@ -35,8 +35,6 @@ Piston* piston_init (float posx, float posy, float alt1, float larg1, float alt2
     pistonC->pos_cx = pistonC->pos_x2 + (pistonC->larg_2)/2;
     pistonC->pos_cy = pistonC->pos_y2;
 
-    
-
     // Ritorno l'oggetto del pistone inizializzato
     return pistonC;
 
@@ -45,19 +43,15 @@ Piston* piston_init (float posx, float posy, float alt1, float larg1, float alt2
 Plate* plate_init (float spess, float lungh, Piston * mypiston1, Piston * mypiston2) {
 
     // Creo l'istanza della piastra
-    Plate * plateC  = new Plate;
+    Plate * plateC = new Plate;
 
     // Posizione x e y della piastra prima della rotazione
     plateC->pos_x = mypiston1->pos_cx - 50;
     plateC->pos_y = mypiston1->pos_cy - 15;
 
-    // Associo le grandezze in input alle relative grandezze della struct
+    // Spessore e lunghezza della piastra
     plateC->spessore = spess;
     plateC->lunghezza = lungh;
-
-    // Centro di rotazione dell'asta
-    plateC->xC = mypiston1->pos_cx + (mypiston2->pos_cx - mypiston1->pos_cx)/2;
-    plateC->yC = mypiston1->pos_cy + (mypiston2->pos_cy - mypiston1->pos_cy)/2;
 
     // Angolo di rotazione
     plateC->angle = atan((mypiston2->pos_cy - mypiston1->pos_cy)/(mypiston2->pos_cx - mypiston1->pos_cx))*180/M_PI;
@@ -112,9 +106,6 @@ void livella_to_svg (Piston * mypiston1, Piston * mypiston2, Plate * myplate, st
 string livella_to_ParamSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myplate ){
 
     string str = "";
-    
-
-
 
     // Pistone di Sinistra
     str += "<rect  x=\"" + to_string(mypiston1->pos_x2) + "\" y=\"" + to_string(mypiston1->pos_y2) + "\" width=\"" + to_string(mypiston1->larg_2) + "\" height=\"" + to_string(mypiston1->alt_2) +  "\" style=\"fill:rgb(200,200,200);stroke-width:3;stroke:rgb(0,0,0)\" /> \n";
