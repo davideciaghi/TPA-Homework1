@@ -86,4 +86,6 @@
     std::string livella_to_ParamSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myplate );
 
 
+    void livella_destroy(Piston * mypiston1, Piston * mypiston2, Plate * myplate);
+
 #endif

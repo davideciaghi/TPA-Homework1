@@ -31,7 +31,7 @@ int main() {
     livella_to_svg(mypiston1, mypiston2, myplate, NameFile);
 
 
-    livella_distroy(mypiston1, mypiston2, myplate);
+    livella_destroy(mypiston1, mypiston2, myplate);
 
     return 0;
 
