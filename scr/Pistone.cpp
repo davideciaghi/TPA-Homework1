@@ -10,6 +10,14 @@
 using namespace std;
 
 
+int * parameters_init() {
+
+    int arr [] = {};
+
+    return arr;
+}
+
+
 Piston* piston_init (float posx, float posy, float alt1, float larg1, float alt2, float larg2){
 
     if (alt2 > alt1){

@@ -100,4 +100,7 @@
     // Funzione cancellazione 
     void livella_destroy(Piston * mypiston1, Piston * mypiston2, Plate * myplate);
 
+
+    int * parameters_init();
+
 #endif
