@@ -15,23 +15,27 @@ Piston* piston_init (float posx, float posy, float alt1, float larg1, float alt2
     // Creo le istanze del pistone
     Piston * pistonC  = new Piston;
 
-    // Associo le grandezze in input alle relative grandezze della struct
-    pistonC->pos_x1 = posx;
-    pistonC->pos_y1 = posy;
-
-    pistonC->pos_x2 = posx + ((larg1 - larg2)/2);
-    pistonC->pos_y2 = posy - alt2;
-
-    // Centri delle coppie rotoidali
-    pistonC->pos_cx = pistonC->pos_x2 + (larg2/2);
-    pistonC->pos_cy = pistonC->pos_y2;
-
     // Dimensioni del cilindro interno
     pistonC->alt_1 = alt1;
     pistonC->larg_1 = larg1;
 
+    // Dimensioni del cilindro esterno
     pistonC->alt_2 = alt2;
     pistonC->larg_2 = larg2;
+
+    // Posizione del cilindro esterno
+    pistonC->pos_x1 = posx;
+    pistonC->pos_y1 = posy;
+
+    // Poiszione del cilindro interno
+    pistonC->pos_x2 = pistonC->pos_x1 + ((pistonC->larg_1 - pistonC->larg_2)/2);
+    pistonC->pos_y2 = pistonC->pos_y1 - pistonC->alt_2;
+
+    // Centri delle coppie rotoidali
+    pistonC->pos_cx = pistonC->pos_x2 + (pistonC->larg_2)/2;
+    pistonC->pos_cy = pistonC->pos_y2;
+
+    
 
     // Ritorno l'oggetto del pistone inizializzato
     return pistonC;
@@ -56,7 +60,7 @@ Plate* plate_init (float spess, float lungh, Piston * mypiston1, Piston * mypist
     plateC->yC = mypiston1->pos_cy + (mypiston2->pos_cy - mypiston1->pos_cy)/2;
 
     // Angolo di rotazione
-    plateC->angle = atan((mypiston2->pos_cy - mypiston1->pos_cy)/(mypiston2->pos_cx - mypiston1->pos_cx));
+    plateC->angle = atan((mypiston2->pos_cy - mypiston1->pos_cy)/(mypiston2->pos_cx - mypiston1->pos_cx))*180/M_PI;
 
     // Ritorno l'oggetto della piastra inizializzato
     return plateC;
@@ -109,6 +113,9 @@ string livella_to_ParamSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myp
 
     string str = "";
     
+
+
+
     // Pistone di Sinistra
     str += "<rect  x=\"" + to_string(mypiston1->pos_x2) + "\" y=\"" + to_string(mypiston1->pos_y2) + "\" width=\"" + to_string(mypiston1->larg_2) + "\" height=\"" + to_string(mypiston1->alt_2) +  "\" style=\"fill:rgb(200,200,200);stroke-width:3;stroke:rgb(0,0,0)\" /> \n";
     str += "<rect  x=\"" + to_string(mypiston1->pos_x1) + "\" y=\"" + to_string(mypiston1->pos_y1) + "\" width=\"" + to_string(mypiston1->larg_1) + "\" height=\"" + to_string(mypiston1->alt_1) +  "\" style=\"fill:rgb(0,200,0);stroke-width:3;stroke:rgb(0,0,0)\" /> \n";
@@ -118,14 +125,15 @@ string livella_to_ParamSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myp
     str += "<rect  x=\"" + to_string(mypiston2->pos_x1) + "\" y=\"" + to_string(mypiston2->pos_y1) + "\" width=\"" + to_string(mypiston2->larg_1) + "\" height=\"" + to_string(mypiston2->alt_1) +  "\" style=\"fill:rgb(0,200,0);stroke-width:3;stroke:rgb(0,0,0)\" /> \n";
     
     // Lastra:
-    str += "<g transform=\"rotate(" + to_string(myplate->angle) + "," + to_string(myplate->xC) + "," + to_string(myplate->yC) + ")\"> \n";
+    str += "<g transform=\"rotate(" + to_string(myplate->angle) + "," + to_string(mypiston1->pos_cx) + "," + to_string(mypiston1->pos_cy) + ")\"> \n";
     str += "<rect  x=\"" + to_string(myplate->pos_x) + "\" y=\"" + to_string(myplate->pos_y) + "\" width=\"" + to_string(myplate->lunghezza) + "\" height=\"" + to_string(myplate->spessore) + "\" style=\"fill:rgb(0,120,0);stroke-width:3;stroke:rgb(200,200,200)\" /> \n";
     str += "<rect  x=\"" + to_string(myplate->pos_x) + "\" y=\"" + to_string(myplate->pos_y - 28) + "\" width=\"" + to_string(myplate->lunghezza) + "\" height=\"0.1\"" + " style=\"fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)\" /> \n";
+    str += "</g> \n";
 
     // Coppie rotoidali
     str += "<circle cx=\"" + to_string(mypiston1->pos_cx) + "\" cy=\"" + to_string(mypiston1->pos_cy) + "\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"lightgrey\" /> \n";
     str += "<circle cx=\"" + to_string(mypiston2->pos_cx) + "\" cy=\"" + to_string(mypiston2->pos_cy) + "\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"lightgrey\" /> \n";
-    str += "</g> \n";
+
 
     return str;
 }

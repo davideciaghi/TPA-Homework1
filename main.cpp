@@ -12,8 +12,8 @@ int main() {
     cout << "Distanza fissa tra i pistoni di: 350" << endl;
 
     //                       posx  posy  alt1 larg1  alt2  larg2
-    mypiston1 = piston_init( 100,  400,  150,  50,   100,   20);
-    mypiston2 = piston_init( 500,  400,  150,  50,   100,   20);
+    mypiston1 = piston_init( 100,  400,  150,  50,   130,   20);
+    mypiston2 = piston_init( 500,  400,  150,  50,   70,   20);
 
     myplate = plate_init(30, 500, mypiston1, mypiston2);
 

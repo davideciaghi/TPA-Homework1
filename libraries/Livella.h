@@ -20,10 +20,7 @@
      *  @param alpha: inclinazione della guida rispetto all'orizzontale
      */
     struct Piston {
-        
-        float lunghezza;
-        float corsa;
-
+    
         float pos_x1;
         float pos_y1;
         float pos_x2;
