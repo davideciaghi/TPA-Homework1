@@ -26,6 +26,7 @@ Piston* piston_init (float posx, float posy, float alt1, float larg1, float alt2
     pistonC->pos_cx = pistonC->pos_x2 + (larg2/2);
     pistonC->pos_cy = pistonC->pos_y2;
 
+    // Dimensioni del cilindro interno
     pistonC->alt_1 = alt1;
     pistonC->larg_1 = larg1;
 
@@ -41,6 +42,10 @@ Plate* plate_init (float spess, float lungh, Piston * mypiston1, Piston * mypist
 
     // Creo l'istanza della piastra
     Plate * plateC  = new Plate;
+
+    // Posizione x e y della piastra prima della rotazione
+    plateC->pos_x = mypiston1->pos_cx - 50;
+    plateC->pos_y = mypiston1->pos_cy - 15;
 
     // Associo le grandezze in input alle relative grandezze della struct
     plateC->spessore = spess;
@@ -114,15 +119,13 @@ string livella_to_ParamSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myp
     
     // Lastra:
     str += "<g transform=\"rotate(" + to_string(myplate->angle) + "," + to_string(myplate->xC) + "," + to_string(myplate->yC) + ")\"> \n";
-    str += "<rect  x=\"90\" y=\"308\" width=\"" + to_string(myplate->lunghezza) + "\" height=\"" + to_string(myplate->spessore) + "\" style=\"fill:rgb(0,120,0);stroke-width:3;stroke:rgb(200,200,200)\" /> \n";
-    str += "<rect  x=\"90\" y=\"280\" width=\"" + to_string(myplate->lunghezza) + "\" height=\"0.1\"" + " style=\"fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)\" /> \n";
+    str += "<rect  x=\"" + to_string(myplate->pos_x) + "\" y=\"" + to_string(myplate->pos_y) + "\" width=\"" + to_string(myplate->lunghezza) + "\" height=\"" + to_string(myplate->spessore) + "\" style=\"fill:rgb(0,120,0);stroke-width:3;stroke:rgb(200,200,200)\" /> \n";
+    str += "<rect  x=\"" + to_string(myplate->pos_x) + "\" y=\"" + to_string(myplate->pos_y - 28) + "\" width=\"" + to_string(myplate->lunghezza) + "\" height=\"0.1\"" + " style=\"fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)\" /> \n";
 
+    // Coppie rotoidali
+    str += "<circle cx=\"" + to_string(mypiston1->pos_cx) + "\" cy=\"" + to_string(mypiston1->pos_cy) + "\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"lightgrey\" /> \n";
+    str += "<circle cx=\"" + to_string(mypiston2->pos_cx) + "\" cy=\"" + to_string(mypiston2->pos_cy) + "\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"lightgrey\" /> \n";
     str += "</g> \n";
-  
-
-
-
-    // Coppie rotoidali:
 
     return str;
 }

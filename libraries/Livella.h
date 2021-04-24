@@ -42,6 +42,8 @@
 
       struct Plate {
         
+        float pos_x;
+        float pos_y;
         float spessore;
         float lunghezza;
         float xC;
