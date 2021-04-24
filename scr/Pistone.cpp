@@ -12,6 +12,10 @@ using namespace std;
 
 Piston* piston_init (float posx, float posy, float alt1, float larg1, float alt2, float larg2){
 
+    if (alt2 > alt1){
+        return NULL;
+    }
+
     // Creo le istanze del pistone
     Piston * pistonC  = new Piston;
 
@@ -127,4 +131,13 @@ string livella_to_ParamSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myp
 
 
     return str;
+}
+
+
+void livella_destroy (Piston * mypiston1, Piston * mypiston2, Plate * myplate) {
+
+    delete mypiston1;
+    delete mypiston2;
+    delete myplate;
+
 }

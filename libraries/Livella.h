@@ -5,19 +5,23 @@
     #include <iostream>
 
     /*
-     *  Definzione della struttura per la guida prismatica
+     *  Introduzione ai parametri dei cilindri:
      * 
-     *  @param lunghezza: lunghezza complessiva della barra della guida prismatica
-     *  @param corsa: posizione relativa del glifo rispetto alla posizione iniziale
+     *  @param pos_x1: posizione x del cilindro esterno
+     *  @param pos_y1: posizione y del cilindro esterno
      *  
-     *  @param pos_x: posizione orizzontale del centro della guida prismatica
-     *  @param pos_y: posizione verticale del centro della guida prismatica
+     *  @param pos_x2: posizione x del cilindro interno
+     *  @param pos_y2: posizione x del cilindro interno
      *  
-     *  @param incastri: oggetto GRect che contiene le informazioni per quanto riguarda le cerniere del sistema
-     *  @param guida: oggetto GRect che contiene le informazioni per quanto riguarda la guida del componente
+     *  @param pos_cx: posizione x della coppia rotoidale
+     *  @param pos_cy: posizione y della coppia rotoidale
      * 
-     *  @param spessore: spessore della guida prismatica
-     *  @param alpha: inclinazione della guida rispetto all'orizzontale
+     *  @param alt_1: altezza del cilindro esterno
+     *  @param larg_1: larghezza del cilindro esterno
+     *  
+     *  @param alt_2: altezza del cilindro interno
+     *  @param larg_2: larghezza del cilindro interno
+     * 
      */
     struct Piston {
     
@@ -25,19 +29,27 @@
         float pos_y1;
         float pos_x2;
         float pos_y2;
-
         float pos_cx;
         float pos_cy;
-
         float alt_1;
         float larg_1;
-
         float alt_2;
         float larg_2;        
     };
 
-
-      struct Plate {
+    /*
+     *  Introduzione ai parametri della piastra:
+     * 
+     *  @param pos_x: posizione x della piastra
+     *  @param pos_y: posizione y della piastra
+     *  
+     *  @param spessore: spessore della piastra
+     *  @param lunghezza: lunghezza della piastra
+     *  
+     *  @param angle: angolo di inclinazione della piastra
+     * 
+     */
+    struct Plate {
         
         float pos_x;
         float pos_y;
@@ -46,18 +58,18 @@
         float angle;    
     };
 
-
-
     
     /*
-     * Funzione che inizializza una guida prismatica
+     * Funzione che inizializza il pistone
      * 
-     * @param posx: posizione orizzontale
-     * @param posy: posizione verticale
-     * @param lungh: lunghezza della guida prismatica che si vuole generare
-     * @param corsa: corsa dell'elemento prismatico
-     * @param dimx: dimensione orizzontale delle cerniere e dell'elemento prismatico
-     * @param dimy: dimensione verticale delle cerniere dell'elemento prismatico
+     *  @param posx1: posizione x del cilindro esterno
+     *  @param posy1: posizione y del cilindro esterno
+     * 
+     *  @param alt1: altezza del cilindro esterno
+     *  @param larg1: larghezza del cilindro esterno
+     *  
+     *  @param alt2: altezza del cilindro interno
+     *  @param larg2: larghezza del cilindro interno
      * 
      */
     Piston * piston_init (float posx, float posy, float alt1, float larg1, float alt2, float larg);
@@ -66,26 +78,26 @@
     /*
      * Funzione che inizializza la piastra
      * 
-     * @param posx: posizione orizzontale
-     * @param posy: posizione verticale
-     * @param lungh: lunghezza della guida prismatica che si vuole generare
-     * @param corsa: corsa dell'elemento prismatico
-     * @param dimx: dimensione orizzontale delle cerniere e dell'elemento prismatico
-     * @param dimy: dimensione verticale delle cerniere dell'elemento prismatico
+     * @param spess: spessore della piastra
+     * @param lung: lunghezza della piastra
      * 
      */
     Plate * plate_init (float spess, float lung, Piston * mypiston1, Piston * mypiston2);
 
 
+    // Funzione che stampa i parametri dei componenti
     void info_parti ( Piston * mypiston1, Piston * mypiston2, Plate * myplate );
 
 
+    // Funzione per la creeazione del file .svg
     void livella_to_svg (Piston * mypiston1, Piston * mypiston2, Plate * myplate, std::string fileName );
 
 
+    // Funzione stringa per implementazione del file svg.
     std::string livella_to_ParamSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myplate );
 
 
+    // Funzione cancellazione 
     void livella_destroy(Piston * mypiston1, Piston * mypiston2, Plate * myplate);
 
 #endif

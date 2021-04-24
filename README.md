@@ -5,9 +5,15 @@ La funzione del meccanismo è quella di regolare l'inclinazione di una piastra u
 Il pistone di sinistra è connesso alla piastra mediante una coppia rotoidale, mentre il pistone di destra tramite una coppia a camma che permette una traslazione relativa dei membri connessi.
 
 #### Parametri fissi:
-* Distanza tra i pistoni
-* Diametro delle coppie rotoidali
-* Quota della base dei pistoni
+* Spessore della piastra: 30
+* Raggio delle coppie rotoidali: 20
+
+#### Vincoli da rispettare:
+* Non inserire parametri negativi
+* La lunghezza del cilindro interno non deve eccedere quella del cilindro esterno
+* La larghezza del cilindro interno non deve essere maggiore di quella del cilindro esterno
+* La lunghezza della piastra non deve essere minore della distanza tra gli estremi dei cilindri
+
 
 #### Parametri dei pistoni:
 * _posx_: posizione x del cilindro esterno
