@@ -16,14 +16,14 @@ Il pistone di sinistra è connesso alla piastra mediante una coppia rotoidale, m
 
 
 #### Parametri dei pistoni:
-* _posx_: posizione x del cilindro esterno
-* _posy_: posizione y del cilindro esterno
-* _alt1_: altezza del cilindro esterno
-* _larg1_: larghezza del cilindro esterno
-* _alt2_: altezza del cilindro interno
-* _larg2_: larghezza del cilindro interno
+* `posx`: posizione x del cilindro esterno
+* `posy`: posizione y del cilindro esterno
+* `alt1`: altezza del cilindro esterno
+* `larg1`: larghezza del cilindro esterno
+* `alt2`: altezza del cilindro interno
+* `larg2`: larghezza del cilindro interno
 
 #### Parametri della piastra:
-* _spess_: spessore della piastra
-* _lungh_: lunghezza della piastra
+* `spess`: spessore della piastra
+* `lungh`: lunghezza della piastra
 

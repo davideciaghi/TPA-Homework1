@@ -72,7 +72,7 @@
      *  @param larg2: larghezza del cilindro interno
      * 
      */
-    Piston * piston_init (float posx, float posy, float alt1, float larg1, float alt2, float larg);
+    Piston * piston_init (float posx, float posy, float alt1, float larg1, float alt2, float larg2);
 
 
     /*

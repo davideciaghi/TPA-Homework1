@@ -16,7 +16,6 @@ Piston* piston_init (float posx, float posy, float alt1, float larg1, float alt2
         return NULL;
     }
 
-    // Creo le istanze del pistone
     Piston * pistonC  = new Piston;
 
     // Dimensioni del cilindro interno
@@ -46,7 +45,7 @@ Piston* piston_init (float posx, float posy, float alt1, float larg1, float alt2
 
 Plate* plate_init (float spess, float lungh, Piston * mypiston1, Piston * mypiston2) {
 
-    // Creo l'istanza della piastra
+
     Plate * plateC = new Plate;
 
     // Posizione x e y della piastra prima della rotazione
