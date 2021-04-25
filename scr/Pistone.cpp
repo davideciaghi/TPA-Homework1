@@ -26,7 +26,7 @@ Param *parameters_init(int nPar) {
                             "Inserire lunghezza della piastra: "};
     int arr[nPar];
 
-    for(int i = 0; i < nPar; i++) {
+    for(int i = 0; i < nPar; i++) {  // Vincolo sui parametri negativi
         cout << stringArr[i];
         cin >> paramC->arr[i];
 

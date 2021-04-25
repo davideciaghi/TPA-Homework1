@@ -10,8 +10,6 @@ int main() {
     Plate * myplate;
     Param * myparam;
 
-    cout << "Distanza fissa tra i pistoni di: 350" << endl;
-
     // Inizializzazione dei parmetri dei dispositivi
     int nPar = 10; // Number of parameters
     myparam = parameters_init( nPar );
@@ -36,6 +34,7 @@ int main() {
     livella_to_svg(mypiston1, mypiston2, myplate, NameFile);
 
 
+    // 
     livella_destroy(mypiston1, mypiston2, myplate, myparam);
 
     return 0;
