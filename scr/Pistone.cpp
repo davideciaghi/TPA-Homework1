@@ -14,40 +14,38 @@ Param *parameters_init() {
 
     Param * paramC = new Param;
 
+    string stringArr[10] = {"Inserire posizione x del primo pistone: ",
+                            "Inserire posizione y dei due pistoni: ",
+                            "Inserire larghezza cilindro esterno: ",
+                            "Inserire lunghezza cilindro esterno: ",
+                            "Inserire posizione x del secondo pistone: ",
+                            "Inserire larghezza cilindro interno: ",
+                            "Inserire estensione primo pistone: ",
+                            "Inserire estensione secondo pistone: ",
+                            "Inserire spessore della piastra: ",
+                            "Inserire lunghezza della piastra: "};
     int arr[10];
 
-    cout << "Inserire posizione x del primo pistone: ";
-    cin >> paramC->arr[0];
-    cout << "Inserire posizione x del secondo pistone: ";
-    cin >> paramC->arr[1];
-    cout << "Inserire posizione y dei due pistoni: ";
-    cin >> paramC->arr[2];
-    cout << "Inserire larghezza cilindro esterno: ";
-    cin >> paramC->arr[3];
-    cout << "Inserire lunghezza cilindro esterno: ";
-    cin >> paramC->arr[4];
-    cout << "Inserire posizione larghezza cilindro interno: ";
-    cin >> paramC->arr[5];
-    cout << "Inserire estensione primo pistone: ";
-    cin >> paramC->arr[6];
-    cout << "Inserire estensione secondo pistone: ";
-    cin >> paramC->arr[7];
+    for(int i=0; i<10; i++) {
+        cout << stringArr[i];
+        cin >> paramC->arr[i];
 
-    cout << "Inserire spessore della piastra: ";
-    cin >> paramC->arr[8];
-    cout << "Inserire lunghezza della piastra: ";
-    cin >> paramC->arr[9];
+        if (paramC->arr[i] <= 0) {
+            while (paramC->arr[i] <= 0){
+                cout << "Inserire un parametro positivo." << endl;
+                cout << stringArr[i];
+                cin >> paramC->arr[i];
+            }
+        }
+
+
+    }
 
     return paramC;
 }
 
 
 Piston* piston_init (float posx, float posy, float alt1, float larg1, float alt2, float larg2){
-
-    if (alt2 > alt1){
-
-        return NULL;
-    }
 
     Piston * pistonC  = new Piston;
 

@@ -12,13 +12,12 @@ int main() {
 
     cout << "Distanza fissa tra i pistoni di: 350" << endl;
 
-  
+    // Inizializzazione dei parmetri dei dispositivi
     myparam = parameters_init();
     
-
     //                           posx               posy                alt1            larg1               alt2                larg2
-    mypiston1 = piston_init( myparam->arr[0],  myparam->arr[2],  myparam->arr[4],  myparam->arr[3],   myparam->arr[6],   myparam->arr[5]);
-    mypiston2 = piston_init( myparam->arr[1],  myparam->arr[2],  myparam->arr[4],  myparam->arr[3],   myparam->arr[7],   myparam->arr[5]);
+    mypiston1 = piston_init( myparam->arr[0],  myparam->arr[1],  myparam->arr[3],  myparam->arr[2],   myparam->arr[6],   myparam->arr[5]);
+    mypiston2 = piston_init( myparam->arr[4],  myparam->arr[1],  myparam->arr[3],  myparam->arr[2],   myparam->arr[7],   myparam->arr[5]);
 
     //                          spess.              lungh.
     myplate = plate_init( myparam->arr[8],   myparam->arr[9], mypiston1, mypiston2);

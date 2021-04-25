@@ -97,6 +97,9 @@
     Param *parameters_init();
 
 
+
+
+
     // Funzione che stampa i parametri dei componenti
     void info_parti ( Piston * mypiston1, Piston * mypiston2, Plate * myplate );
 
