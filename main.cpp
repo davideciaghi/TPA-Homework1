@@ -35,7 +35,7 @@ int main() {
     cout << "Inserire il nome del file .svg che verrà creato: ";
     cin >> NameFile;
 
-    livella_to_svg(mypiston1, mypiston2, myplate, NameFile);
+    livella_to_svg(mypiston1, mypiston2, myplate, "../" + NameFile);
 
 
     // 
