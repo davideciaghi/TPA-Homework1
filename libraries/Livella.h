@@ -90,6 +90,13 @@
     Plate * plate_init (float spess, float lung, Piston * mypiston1, Piston * mypiston2);
 
 
+    /*
+     * Funzione inserimento parametri
+     * 
+     */
+    Param *parameters_init();
+
+
     // Funzione che stampa i parametri dei componenti
     void info_parti ( Piston * mypiston1, Piston * mypiston2, Plate * myplate );
 
@@ -106,6 +113,6 @@
     void livella_destroy(Piston * mypiston1, Piston * mypiston2, Plate * myplate, Param * myparam);
 
 
-    Param *parameters_init();
+    
 
 #endif

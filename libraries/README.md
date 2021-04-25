@@ -5,6 +5,10 @@ La libreria Livella.h contiene diverse funzioni atte alla creazione di un file f
 ## Descrizione delle funzioni implementate:
 
 
+#### `parameters_init`
+Funzione inserimento parametri vincolati.
+
+
 #### `piston_init`
 Inizializzazione dell'istanza del pistone. Come parametri riceve:
 * `posx1`: posizione x del cilindro esterno

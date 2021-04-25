@@ -17,22 +17,26 @@ Param *parameters_init() {
     int arr[10];
 
     cout << "Inserire posizione x del primo pistone: ";
+    cin >> paramC->arr[0];
     cout << "Inserire posizione x del secondo pistone: ";
+    cin >> paramC->arr[1];
     cout << "Inserire posizione y dei due pistoni: ";
+    cin >> paramC->arr[2];
     cout << "Inserire larghezza cilindro esterno: ";
+    cin >> paramC->arr[3];
     cout << "Inserire lunghezza cilindro esterno: ";
+    cin >> paramC->arr[4];
     cout << "Inserire posizione larghezza cilindro interno: ";
+    cin >> paramC->arr[5];
     cout << "Inserire estensione primo pistone: ";
+    cin >> paramC->arr[6];
     cout << "Inserire estensione secondo pistone: ";
+    cin >> paramC->arr[7];
 
     cout << "Inserire spessore della piastra: ";
+    cin >> paramC->arr[8];
     cout << "Inserire lunghezza della piastra: ";
-
-
-
-    cout << "Inserire primo valore: ";
-    cin >> paramC->arr[0];
-    cout << paramC->arr[0] << endl;
+    cin >> paramC->arr[9];
 
     return paramC;
 }
