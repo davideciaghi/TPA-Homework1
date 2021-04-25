@@ -5,7 +5,6 @@ La funzione del meccanismo è quella di regolare l'inclinazione di una piastra u
 Il pistone di sinistra è connesso alla piastra mediante una coppia rotoidale, mentre il pistone di destra tramite una coppia a camma che permette una traslazione relativa dei membri connessi.
 
 #### Parametri fissi:
-* Spessore della piastra: 30
 * Raggio delle coppie rotoidali: 20
 
 #### Vincoli da rispettare:

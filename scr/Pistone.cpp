@@ -10,11 +10,11 @@
 using namespace std;
 
 
-Param *parameters_init() {
+Param *parameters_init(int nPar) {
 
     Param * paramC = new Param;
 
-    string stringArr[10] = {"Inserire posizione x del primo pistone: ",
+    string stringArr[nPar] = {"Inserire posizione x del primo pistone: ",
                             "Inserire posizione y dei due pistoni: ",
                             "Inserire larghezza cilindro esterno: ",
                             "Inserire lunghezza cilindro esterno: ",
@@ -24,9 +24,9 @@ Param *parameters_init() {
                             "Inserire estensione secondo pistone: ",
                             "Inserire spessore della piastra: ",
                             "Inserire lunghezza della piastra: "};
-    int arr[10];
+    int arr[nPar];
 
-    for(int i=0; i<10; i++) {
+    for(int i = 0; i < nPar; i++) {
         cout << stringArr[i];
         cin >> paramC->arr[i];
 
@@ -37,9 +37,55 @@ Param *parameters_init() {
                 cin >> paramC->arr[i];
             }
         }
-
-
     }
+
+        if (paramC->arr[4] <= paramC->arr[0] + paramC->arr[2]){
+            while (paramC->arr[4] <= paramC->arr[0] + paramC->arr[2]){
+                cout << "La distanza tra i pistoni non è sufficientemente grande." << endl;
+                cout << stringArr[4];
+                cin >> paramC->arr[4];
+            }
+        }
+
+        if (paramC->arr[5] >= paramC->arr[2]){
+            while (paramC->arr[5] >= paramC->arr[2]){
+                cout << "La larghezza del cilindro interno deve essere minore di quella del cilindro esterno." << endl;
+                cout << stringArr[5];
+                cin >> paramC->arr[5];
+            }
+        }
+
+        if (paramC->arr[6] > paramC->arr[3]){
+            while (paramC->arr[6] > paramC->arr[3]){
+                cout << "L'estensione del cilindro interno non può essere maggiore della lunghezza del cilindro esterno." << endl;
+                cout << stringArr[6];
+                cin >> paramC->arr[6];
+            }
+        }
+
+        if (paramC->arr[7] > paramC->arr[3]){
+            while (paramC->arr[7] > paramC->arr[3]){
+                cout << "L'estensione del cilindro interno non può essere maggiore della lunghezza del cilindro esterno." << endl;
+                cout << stringArr[7];
+                cin >> paramC->arr[7];
+            }
+        }
+
+        if (paramC->arr[8] >= paramC->arr[3]){
+            while (paramC->arr[7] > paramC->arr[3]){
+                cout << "Lo spessore della piastra non deve eccedere l'altezza del cilindro esterno." << endl;
+                cout << stringArr[8];
+                cin >> paramC->arr[8];
+            }
+        }
+
+        if (paramC->arr[9] <= (paramC->arr[4] - paramC->arr[0] + paramC->arr[2])){
+            while (paramC->arr[7] > paramC->arr[3]){
+                cout << "La lunghezza della piastra non può essere inferiore alla distanza delgi estremi dei due cilindri." << endl;
+                cout << stringArr[8];
+                cin >> paramC->arr[8];
+            }
+        }
 
     return paramC;
 }

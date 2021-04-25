@@ -94,7 +94,7 @@
      * Funzione inserimento parametri
      * 
      */
-    Param *parameters_init();
+    Param *parameters_init(int nPar);
 
 
 

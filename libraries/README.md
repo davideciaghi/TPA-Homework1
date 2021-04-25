@@ -6,7 +6,7 @@ La libreria Livella.h contiene diverse funzioni atte alla creazione di un file f
 
 
 #### `parameters_init`
-Funzione inserimento parametri vincolati.
+Funzione di controllo dei parametri secondo dei vincoli imposti.
 
 
 #### `piston_init`
