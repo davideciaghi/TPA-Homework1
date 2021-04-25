@@ -4,6 +4,13 @@
 La funzione del meccanismo è quella di regolare l'inclinazione di una piastra utilizzando due pistoni ad essa connessi.
 Il pistone di sinistra è connesso alla piastra mediante una coppia rotoidale, mentre il pistone di destra tramite una coppia a camma che permette una traslazione relativa dei membri connessi.
 
+#### Procedura di utilizzo dell'eseguibile:
+1. Attraverso il terminal si inseriscono i valori dei parametri, (qualora fossero negativi o =0 il programma chiede nuovamente di inserire il parametro);
+2. Se i parametri non dovessero rispettare i vincoli costruttivi del dispositivo il programma specifica il problema e chide di reinserirli.
+3. Viene chiesto i inserire il nome del file .svg del file che verrà creato;
+4. In fine viene creato il file .svg.
+
+
 #### Parametri fissi:
 * Raggio delle coppie rotoidali: 20
 
