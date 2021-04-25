@@ -10,17 +10,38 @@
 using namespace std;
 
 
-int * parameters_init() {
+Param *parameters_init() {
 
-    int arr [] = {};
+    Param * paramC = new Param;
 
-    return arr;
+    int arr[10];
+
+    cout << "Inserire posizione x del primo pistone: ";
+    cout << "Inserire posizione x del secondo pistone: ";
+    cout << "Inserire posizione y dei due pistoni: ";
+    cout << "Inserire larghezza cilindro esterno: ";
+    cout << "Inserire lunghezza cilindro esterno: ";
+    cout << "Inserire posizione larghezza cilindro interno: ";
+    cout << "Inserire estensione primo pistone: ";
+    cout << "Inserire estensione secondo pistone: ";
+
+    cout << "Inserire spessore della piastra: ";
+    cout << "Inserire lunghezza della piastra: ";
+
+
+
+    cout << "Inserire primo valore: ";
+    cin >> paramC->arr[0];
+    cout << paramC->arr[0] << endl;
+
+    return paramC;
 }
 
 
 Piston* piston_init (float posx, float posy, float alt1, float larg1, float alt2, float larg2){
 
     if (alt2 > alt1){
+
         return NULL;
     }
 
@@ -141,10 +162,11 @@ string livella_to_ParamSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myp
 }
 
 
-void livella_destroy (Piston * mypiston1, Piston * mypiston2, Plate * myplate) {
+void livella_destroy (Piston * mypiston1, Piston * mypiston2, Plate * myplate, Param * myparam) {
 
     delete mypiston1;
     delete mypiston2;
     delete myplate;
+    delete myparam;
 
 }

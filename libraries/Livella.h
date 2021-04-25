@@ -58,6 +58,11 @@
         float angle;    
     };
 
+    struct Param {
+
+        int arr[10];
+    };
+
     
     /*
      * Funzione che inizializza il pistone
@@ -98,9 +103,9 @@
 
 
     // Funzione cancellazione 
-    void livella_destroy(Piston * mypiston1, Piston * mypiston2, Plate * myplate);
+    void livella_destroy(Piston * mypiston1, Piston * mypiston2, Plate * myplate, Param * myparam);
 
 
-    int * parameters_init();
+    Param *parameters_init();
 
 #endif

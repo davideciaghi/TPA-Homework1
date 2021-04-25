@@ -8,17 +8,17 @@ int main() {
     Piston * mypiston1;
     Piston * mypiston2;
     Plate * myplate;
+    Param * myparam;
 
     cout << "Distanza fissa tra i pistoni di: 350" << endl;
 
-    
-    int * myparameters;
-    myparameters = parameters_init();
+  
+    myparam = parameters_init();
     
 
     //                       posx  posy  alt1 larg1  alt2  larg2
-    mypiston1 = piston_init( 100,  400,  150,  50,   30,   20);
-    mypiston2 = piston_init( 500,  400,  150,  50,   151,   20);
+    mypiston1 = piston_init( 100,  400,  150,  50,   myparam->arr[0],   20);
+    mypiston2 = piston_init( 500,  400,  150,  50,   50,   20);
 
     //                  spess. lungh.
     myplate = plate_init( 30,   500, mypiston1, mypiston2);
@@ -36,7 +36,7 @@ int main() {
     livella_to_svg(mypiston1, mypiston2, myplate, NameFile);
 
 
-    livella_destroy(mypiston1, mypiston2, myplate);
+    livella_destroy(mypiston1, mypiston2, myplate, myparam);
 
     return 0;
 
