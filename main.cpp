@@ -10,6 +10,9 @@ int main() {
     Plate * myplate;
     Param * myparam;
 
+
+
+
     // Inizializzazione dei parmetri dei dispositivi
     int nPar = 10; // Number of parameters
     myparam = parameters_init( nPar );
@@ -28,8 +31,9 @@ int main() {
 
 
     // Creazione del file .svg
-
-    string NameFile = "ProvaSVG";
+    string NameFile = "";
+    cout << "Inserire il nome del file .svg che verrà creato: ";
+    cin >> NameFile;
 
     livella_to_svg(mypiston1, mypiston2, myplate, NameFile);
 
