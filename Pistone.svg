@@ -12,17 +12,33 @@
    
   <g transform="rotate(7,400,215)"> 
   	<rect  x="90" y="308" width="500" height="30" style="fill:rgb(0,120,0);stroke-width:3;stroke:rgb(200,200,200)" />  
-    <rect  x="90" y="280" width="500" height="0.1" style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)" />  
-    <text  x="350" y="250" fill="white">4 m</text>
   </g>
   
   <circle cx="125" cy="290" r="20" stroke="black" stroke-width="3" fill="lightgrey" />
   <circle cx="525" cy="340" r="20" stroke="black" stroke-width="3" fill="lightgrey" />
   
+
+
+
+  // Base
   <rect x="100" y="590" width="50" height="0.1" style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)" />  
   <text x="115" y="580" fill="white">50</text>
-  <rect x="500" y="590" width="50" height="0.1" style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)" />  
-  <text x="515" y="580" fill="white">50</text>
+
+  // Lato cilindro esterno
+  <rect x="70" y="400" width="0.1" height="150" style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)" />  
+  <text x="40" y="480" fill="white">50</text>
+
+  // Lato cilindro interno
+  <rect x="40" y="300" width="0.1" height="100" style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)" />  
+  <text x="10" y="350" fill="white">50</text>
+
+  <rect x="152" y="500" width="345" height="0.1" style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)" />  
+  <text x="300" y="490" fill="white">50</text>
+
+   <g transform="rotate(7,400,215)"> 
+    <rect  x="90" y="280" width="500" height="0.1" style="fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)" />  
+    <text  x="320" y="250" fill="white">4 m</text>
+  </g>
 
 </svg>
 
