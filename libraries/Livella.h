@@ -58,6 +58,13 @@
         float angle;    
     };
 
+
+    /*
+     * Introduzione ai parametri della struttura Param:
+     *
+     *  @param arr: array che contiene tutti i parametri del device
+     * 
+     */
     struct Param {
 
         int arr[10];
@@ -93,6 +100,10 @@
     /*
      * Funzione inserimento parametri
      * 
+     * @param nPar: numero di parametri del device
+     * @param stringArr: array contenente le descrizioni per l'inserimento di ciascun parametro
+     * @param arr: array che contiene tutti i parametri del device
+     * 
      */
     Param *parameters_init(int nPar);
 
@@ -105,11 +116,15 @@
 
 
     // Funzione per la creeazione del file .svg
-    void livella_to_svg (Piston * mypiston1, Piston * mypiston2, Plate * myplate, std::string fileName );
+    void livella_to_svg (Piston * mypiston1, Piston * mypiston2, Plate * myplate, std::string fileName, bool measures);
 
 
     // Funzione stringa per implementazione del file svg.
-    std::string livella_to_ParamSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myplate );
+    std::string livella_to_ParamSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myplate);
+
+
+    // Funzione stringa per implementazione delle misure nel file svg.
+    std::string livella_to_MeasureSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myplate);
 
 
     // Funzione cancellazione 

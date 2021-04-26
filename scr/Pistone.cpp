@@ -166,18 +166,21 @@ void info_parti ( Piston * mypiston1, Piston * mypiston2, Plate * myplate ){
 
 
 
-void livella_to_svg (Piston * mypiston1, Piston * mypiston2, Plate * myplate, string fileName ){
+void livella_to_svg (Piston * mypiston1, Piston * mypiston2, Plate * myplate, string fileName, bool measures ){
 
     ofstream mySVG( fileName + ".svg");
     
     mySVG << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>" << endl;
-
     mySVG << "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"800\" height=\"600\">" << endl;
 
     mySVG << livella_to_ParamSVG( mypiston1, mypiston2, myplate );
+    
+    if (measures == 1) {
+
+        mySVG << livella_to_MeasureSVG( mypiston1, mypiston2, myplate );
+    }
 
     mySVG << "</svg>";
-
     mySVG.close();
 
 }
@@ -190,24 +193,36 @@ string livella_to_ParamSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myp
     // Pistone di Sinistra
     str += "<rect  x=\"" + to_string(mypiston1->pos_x2) + "\" y=\"" + to_string(mypiston1->pos_y2) + "\" width=\"" + to_string(mypiston1->larg_2) + "\" height=\"" + to_string(mypiston1->alt_2) +  "\" style=\"fill:rgb(200,200,200);stroke-width:3;stroke:rgb(0,0,0)\" /> \n";
     str += "<rect  x=\"" + to_string(mypiston1->pos_x1) + "\" y=\"" + to_string(mypiston1->pos_y1) + "\" width=\"" + to_string(mypiston1->larg_1) + "\" height=\"" + to_string(mypiston1->alt_1) +  "\" style=\"fill:rgb(0,200,0);stroke-width:3;stroke:rgb(0,0,0)\" /> \n";
-
     // Pistone di Destra
     str += "<rect  x=\"" + to_string(mypiston2->pos_x2) + "\" y=\"" + to_string(mypiston2->pos_y2) + "\" width=\"" + to_string(mypiston2->larg_2) + "\" height=\"" + to_string(mypiston2->alt_2) +  "\" style=\"fill:rgb(200,200,200);stroke-width:3;stroke:rgb(0,0,0)\" /> \n";
     str += "<rect  x=\"" + to_string(mypiston2->pos_x1) + "\" y=\"" + to_string(mypiston2->pos_y1) + "\" width=\"" + to_string(mypiston2->larg_1) + "\" height=\"" + to_string(mypiston2->alt_1) +  "\" style=\"fill:rgb(0,200,0);stroke-width:3;stroke:rgb(0,0,0)\" /> \n";
-    
     // Lastra:
     str += "<g transform=\"rotate(" + to_string(myplate->angle) + "," + to_string(mypiston1->pos_cx) + "," + to_string(mypiston1->pos_cy) + ")\"> \n";
     str += "<rect  x=\"" + to_string(myplate->pos_x) + "\" y=\"" + to_string(myplate->pos_y) + "\" width=\"" + to_string(myplate->lunghezza) + "\" height=\"" + to_string(myplate->spessore) + "\" style=\"fill:rgb(0,120,0);stroke-width:3;stroke:rgb(200,200,200)\" /> \n";
     str += "<rect  x=\"" + to_string(myplate->pos_x) + "\" y=\"" + to_string(myplate->pos_y - 28) + "\" width=\"" + to_string(myplate->lunghezza) + "\" height=\"0.1\"" + " style=\"fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)\" /> \n";
     str += "</g> \n";
-
     // Coppie rotoidali
     str += "<circle cx=\"" + to_string(mypiston1->pos_cx) + "\" cy=\"" + to_string(mypiston1->pos_cy) + "\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"lightgrey\" /> \n";
     str += "<circle cx=\"" + to_string(mypiston2->pos_cx) + "\" cy=\"" + to_string(mypiston2->pos_cy) + "\" r=\"20\" stroke=\"black\" stroke-width=\"3\" fill=\"lightgrey\" /> \n";
 
+    return str;
+}
+
+
+string livella_to_MeasureSVG (Piston * mypiston1, Piston * mypiston2, Plate * myplate) {
+
+    string str = "";
+
 
     return str;
 }
+
+
+
+
+
+
+
 
 
 void livella_destroy (Piston * mypiston1, Piston * mypiston2, Plate * myplate, Param * myparam) {

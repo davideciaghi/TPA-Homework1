@@ -10,8 +10,7 @@ int main() {
     Plate * myplate;
     Param * myparam;
 
-
-
+ 
 
     // Inizializzazione dei parmetri dei dispositivi
     int nPar = 10; // Number of parameters
@@ -35,7 +34,11 @@ int main() {
     cout << "Inserire il nome del file .svg che verrà creato: ";
     cin >> NameFile;
 
-    livella_to_svg(mypiston1, mypiston2, myplate, "../" + NameFile);
+    bool with_measures;
+    cout << "Includere le misure nel file .svg ? - inserire \"1\" se sì, \"0\" altrimenti: ";
+    cin >> with_measures;
+
+    livella_to_svg(mypiston1, mypiston2, myplate, "../" + NameFile, with_measures);
 
 
     // 

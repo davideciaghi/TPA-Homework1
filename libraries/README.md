@@ -32,8 +32,14 @@ La funzione stampa sul terminal tutti parametri caratteristici del meccanismo.
 #### `livella_to_svg`
 Funzione per la creazione del file .svg
 
+
 #### `livellalivella_to_ParamSVG_to_svg`
 Funzione per implementazione del file .svg
+
+
+#### `livellalivella_to_MeasureSVG_to_svg`
+Funzione per l'inserimento delle misure nel file .svg
+
 
 #### `livella_destroy`
 Funzione che distrugge i puntatori creati alle struct `Piston` e `Plate`.
