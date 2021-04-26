@@ -213,12 +213,31 @@ string livella_to_MeasureSVG (Piston * mypiston1, Piston * mypiston2, Plate * my
 
     string str = "";
 
+    // Misura larghezza cilindro esterno
+    str += "<rect  x=\"" + to_string(mypiston1->pos_x1) + "\" y=\"" + to_string(mypiston1->pos_y1 + mypiston1->alt_1 + 40) + "\" width=\"" + to_string(mypiston1->larg_1) + "\" height=\"0.1\"" + " style=\"fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)\" /> \n";
+    str += "<text x=\"" + to_string(mypiston1->pos_x1 + (mypiston1->larg_1)/2) + "\" y=\"" + to_string(mypiston1->pos_y1 + mypiston1->alt_1 + 30) + "\" fill=\"white\">" + to_string(mypiston1->larg_1) + "</text>";
 
-    
+    // Misura altezza cilindro esterno
+    str += "<rect  x=\"" + to_string(mypiston1->pos_x1 - 30) + "\" y=\"" + to_string(mypiston1->pos_y1) + "\" width=\"0.1\" height=\"" + to_string(mypiston1->alt_1) + "\" style=\"fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)\" /> \n";
+    str += "<text x=\"" + to_string(mypiston1->pos_x1 - 60) + "\" y=\"" + to_string(mypiston1->pos_y1 + (mypiston1->alt_1)/2) + "\" fill=\"white\">" + to_string(mypiston1->alt_1) + "</text>\n";
+
+    // Misura altezza cilindro interno di sinistra
+    str += "<rect  x=\"" + to_string(mypiston1->pos_x2 - 95) + "\" y=\"" + to_string(mypiston1->pos_y2) + "\" width=\"0.1\" height=\"" + to_string(mypiston1->alt_2) + "\" style=\"fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)\" /> \n";
+    str += "<text x=\"" + to_string(mypiston1->pos_x2 - 105) + "\" y=\"" + to_string(mypiston1->pos_y2 + (mypiston1->alt_2)/2) + "\" fill=\"white\">" + to_string(mypiston1->alt_2) + "</text>\n";
+
+    // Misura altezza cilindro interno di destra
+    str += "<rect  x=\"" + to_string(mypiston2->pos_x2 + 95) + "\" y=\"" + to_string(mypiston2->pos_y2) + "\" width=\"0.1\" height=\"" + to_string(mypiston2->alt_2) + "\" style=\"fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)\" /> \n";
+    str += "<text x=\"" + to_string(mypiston2->pos_x2 + 105) + "\" y=\"" + to_string(mypiston2->pos_y2 + (mypiston2->alt_2)/2) + "\" fill=\"white\">" + to_string(mypiston2->alt_2) + "</text>\n";
+
+    // Misura fra cilindri
+    str += "<rect  x=\"" + to_string(mypiston1->pos_x1 + mypiston1->larg_1) + "\" y=\"" + to_string(mypiston1->pos_y1 + (mypiston1->alt_1)/2) + "\" width=\"" + to_string(mypiston2->pos_x1 - (mypiston1->pos_x1 - mypiston1->larg_1)) + "\" height=\"0.1\"" + " style=\"fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)\" /> \n";
+    str += "<text x=\"" + to_string(mypiston1->pos_x1 + mypiston1->larg_1 + (mypiston2->pos_x1 - (mypiston1->pos_x1 - mypiston1->larg_1))/2) + "\" y=\"" + to_string((mypiston1->pos_y1 + (mypiston1->alt_1)/2) - 10) + "\" fill=\"white\">" + to_string(mypiston2->pos_x1 - (mypiston1->pos_x1 - mypiston1->larg_1)) + "</text>\n";
+
     // Misura piastra
+    str += "<g transform=\"rotate(" + to_string(myplate->angle) + "," + to_string(mypiston1->pos_cx) + "," + to_string(mypiston1->pos_cy) + ")\"> \n";
     str += "<rect  x=\"" + to_string(myplate->pos_x) + "\" y=\"" + to_string(myplate->pos_y - 28) + "\" width=\"" + to_string(myplate->lunghezza) + "\" height=\"0.1\"" + " style=\"fill:rgb(0,0,0);stroke-width:1;stroke:rgb(225,225,225)\" /> \n";
-
-
+    str += "<text x=\"" + to_string(myplate->pos_x + (myplate->lunghezza)/2) + "\" y=\"" + to_string(myplate->pos_y - 40) + "\" fill=\"white\">" + to_string(myplate->lunghezza) + "</text>\n";
+    str += "</g> \n";
 
     return str;
 }
