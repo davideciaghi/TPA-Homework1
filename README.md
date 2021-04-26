@@ -4,6 +4,8 @@
 La funzione del meccanismo è quella di regolare l'inclinazione di una piastra utilizzando due pistoni ad essa connessi.
 Il pistone di sinistra è connesso alla piastra mediante una coppia rotoidale, mentre il pistone di destra tramite una coppia a camma che permette una traslazione relativa dei membri connessi.
 
+Il device può essere utile nell'accoppiamento con un altro device per regolarne il posizionamento e l'inclinazione.
+
 #### Procedura di utilizzo dell'eseguibile:
 1. Attraverso il terminal si inseriscono i valori dei parametri, (qualora fossero negativi o =0 il programma chiede nuovamente di inserire il parametro);
 2. Se i parametri non dovessero rispettare i vincoli costruttivi del dispositivo il programma specifica il problema e chide di reinserirli.
