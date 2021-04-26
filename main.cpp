@@ -10,7 +10,6 @@ int main() {
     Plate * myplate;
     Param * myparam;
 
- 
 
     // Inizializzazione dei parmetri dei dispositivi
     int nPar = 10; // Number of parameters

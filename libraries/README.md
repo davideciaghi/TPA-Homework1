@@ -33,11 +33,11 @@ La funzione stampa sul terminal tutti parametri caratteristici del meccanismo.
 Funzione per la creazione del file .svg
 
 
-#### `livellalivella_to_ParamSVG_to_svg`
+#### `livella_to_ParamSVG_to_svg`
 Funzione per implementazione del file .svg
 
 
-#### `livellalivella_to_MeasureSVG_to_svg`
+#### `livella_to_MeasureSVG_to_svg`
 Funzione per l'inserimento delle misure nel file .svg
 
 
