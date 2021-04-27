@@ -225,7 +225,6 @@ int param_control(Livella * mylivella) {
 
     cout << "Fine controllo segni dati" << endl;
 
-
     return n;
 
 }
