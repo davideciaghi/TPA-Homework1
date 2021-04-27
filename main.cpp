@@ -4,28 +4,23 @@
 using namespace std;
 
 int main() {
-
-    Piston * mypiston1;
-    Piston * mypiston2;
-    Plate * myplate;
-    Param * myparam;
-
-
-    // Inizializzazione dei parmetri dei dispositivi
-    int nPar = 10; // Number of parameters
-    myparam = parameters_init( nPar );
     
-    //                           posx               posy                alt1            larg1               alt2                larg2
-    mypiston1 = piston_init( myparam->arr[0],  myparam->arr[1],  myparam->arr[3],  myparam->arr[2],   myparam->arr[6],   myparam->arr[5]);
-    mypiston2 = piston_init( myparam->arr[4],  myparam->arr[1],  myparam->arr[3],  myparam->arr[2],   myparam->arr[7],   myparam->arr[5]);
+    Livella * mylivella;
+    
 
-    //                          spess.              lungh.
-    myplate = plate_init( myparam->arr[8],   myparam->arr[9], mypiston1, mypiston2);
+    // Funzione di inserimento dei parametri
+    mylivella = livella_init(100,500,400,-150,50,20,30,70,30,500);
 
+
+    // Funzione che controlla se i parametri sono positivi
+    param_control(mylivella);
+
+    // Funzione che controlla se i parametri sono consistenti tra loro
+    device_control(mylivella);
 
     // Informazioni sulle parti del meccanismo
     cout << "Informazioni su pistoni e piastra:" << endl;
-    info_parti( mypiston1, mypiston2, myplate );
+    info_parti(mylivella);
 
 
     // Creazione del file .svg
@@ -37,12 +32,12 @@ int main() {
     cout << "Includere le misure nel file .svg ? - inserire \"1\" se sì, \"0\" altrimenti: ";
     cin >> with_measures;
 
-    livella_to_svg(mypiston1, mypiston2, myplate, "../" + NameFile, with_measures);
+    livella_to_svg(mylivella, "../" + NameFile, with_measures);
 
 
     // 
-    livella_destroy(mypiston1, mypiston2, myplate, myparam);
+    livella_destroy(mylivella);
 
-    return 0;
+    return EXIT_SUCCESS;
 
 }

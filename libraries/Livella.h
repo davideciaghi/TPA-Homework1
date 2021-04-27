@@ -51,6 +51,10 @@
      */
     struct Plate {
         
+        float pos_cxS;
+        float pos_cyS;
+        float pos_cxD;
+        float pos_cyD;
         float pos_x;
         float pos_y;
         float spessore;
@@ -58,16 +62,12 @@
         float angle;    
     };
 
+    struct Livella {
 
-    /*
-     * Introduzione ai parametri della struttura Param:
-     *
-     *  @param arr: array che contiene tutti i parametri del device
-     * 
-     */
-    struct Param {
+        Piston * mypiston1;
+        Piston * mypiston2;
+        Plate * myplate;
 
-        int arr[10];
     };
 
     
@@ -94,41 +94,46 @@
      * @param lung: lunghezza della piastra
      * 
      */
-    Plate * plate_init (float spess, float lung, Piston * mypiston1, Piston * mypiston2);
+    Plate * plate_init (float spess, float lung, float posx1, float posx2, float posy, float alt1, float larg1, float altS, float altD, float larg2);
 
-
-    /*
-     * Funzione inserimento parametri
-     * 
-     * @param nPar: numero di parametri del device
-     * @param stringArr: array contenente le descrizioni per l'inserimento di ciascun parametro
-     * @param arr: array che contiene tutti i parametri del device
-     * 
-     */
-    Param *parameters_init(int nPar);
+    
+    
+    Livella * livella_init(float posx1, float posx2, float posy, float alt1, float larg1, float larg2, float altS, float altD, float spess, float lung);
 
 
 
+    void piston_set_pos(Livella * mylivella);
+    void piston_set_alt(Livella * mylivella);
+    void piston_set_larg1(Livella * mylivella);
+    void piston_set_alt1(Livella * mylivella);
+    void piston_set_alt2(Livella * mylivella);
+    void piston_set_larg2(Livella * mylivella);
+    void plate_set_spessore(Livella * mylivella);
+    void plate_set_lunghezza(Livella * mylivella);
+
+    void param_control(Livella * mylivella);
+
+    void device_control(Livella * mylivella);
 
 
     // Funzione che stampa i parametri dei componenti
-    void info_parti ( Piston * mypiston1, Piston * mypiston2, Plate * myplate );
+    void info_parti ( Livella * mylivella );
 
 
     // Funzione per la creeazione del file .svg
-    void livella_to_svg (Piston * mypiston1, Piston * mypiston2, Plate * myplate, std::string fileName, bool measures);
+    void livella_to_svg (Livella * mylivella, std::string fileName, bool measures);
 
 
     // Funzione stringa per implementazione del file svg.
-    std::string livella_to_ParamSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myplate);
+    std::string livella_to_ParamSVG ( Livella * mylivella);
 
 
     // Funzione stringa per implementazione delle misure nel file svg.
-    std::string livella_to_MeasureSVG ( Piston * mypiston1, Piston * mypiston2, Plate * myplate);
+    std::string livella_to_MeasureSVG ( Livella * mylivella);
 
 
     // Funzione cancellazione 
-    void livella_destroy(Piston * mypiston1, Piston * mypiston2, Plate * myplate, Param * myparam);
+    void livella_destroy(Livella * mylivella);
 
 
     
