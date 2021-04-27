@@ -102,6 +102,9 @@
 
 
 
+    int param_control(Livella * mylivella);
+    int device_control(Livella * mylivella);
+
     void piston_set_pos(Livella * mylivella);
     void piston_set_alt(Livella * mylivella);
     void piston_set_larg1(Livella * mylivella);
@@ -111,9 +114,7 @@
     void plate_set_spessore(Livella * mylivella);
     void plate_set_lunghezza(Livella * mylivella);
 
-    void param_control(Livella * mylivella);
-
-    void device_control(Livella * mylivella);
+    
 
 
     // Funzione che stampa i parametri dei componenti

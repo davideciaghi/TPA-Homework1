@@ -9,15 +9,20 @@ int main() {
     
 
     // Funzione di inserimento dei parametri
-    mylivella = livella_init(100,500,400,150,50,20,30,70,30,30);
+    mylivella = livella_init(100,500,400,150,50,20,30,70,30,500);
 
 
-    // Funzione che controlla se i parametri sono positivi
-    param_control(mylivella);
+    bool check_param = 1;
+    bool check_device = 1;
 
-    // Funzione che controlla se i parametri sono consistenti tra loro
-    device_control(mylivella);
+    while (check_param != 0 || check_device != 0) {
+        // Funzione che controlla se i parametri sono positivi
+        check_param = param_control(mylivella);
+        // Funzione che controlla se i parametri sono consistenti tra loro
+        check_device = device_control(mylivella);
+    }
 
+    
     // Informazioni sulle parti del meccanismo
     cout << "Informazioni su pistoni e piastra:" << endl;
     info_parti(mylivella);
