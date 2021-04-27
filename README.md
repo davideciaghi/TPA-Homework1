@@ -7,10 +7,12 @@ Il pistone di sinistra è connesso alla piastra mediante una coppia rotoidale, m
 Il device può essere utile nell'accoppiamento con un altro device per regolarne il posizionamento e l'inclinazione.
 
 #### Procedura di utilizzo dell'eseguibile:
-1. Attraverso il terminal si inseriscono i valori dei parametri, (qualora fossero negativi o =0 il programma chiede nuovamente di inserire il parametro);
+1. Attraverso il terminal si inseriscono i valori dei parametri, (qualora fossero negativi o nulli il programma chiede nuovamente di inserire il parametro);
 2. Se i parametri non dovessero rispettare i vincoli costruttivi del dispositivo il programma specifica il problema e chide di reinserirli.
-3. Viene chiesto i inserire il nome del file .svg del file che verrà creato;
-4. In fine viene creato il file .svg.
+3. Vengono stampati i parametri del dispositivo;
+4. Viene chiesto i inserire il nome del file .svg del file che verrà creato;
+5. Si sceglie se aggiungere le misure al file svg;
+6. In fine viene creato il file .svg;
 
 
 #### Parametri fissi:
