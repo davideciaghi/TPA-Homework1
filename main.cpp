@@ -3,12 +3,11 @@
 
 using namespace std;
 
+
 int main() {
     
-    Livella * mylivella;
-    
 
-    // Funzione di inserimento dei parametri
+    Livella * mylivella;
     mylivella = livella_init();
 
 
@@ -16,31 +15,26 @@ int main() {
     bool check_device = 1;
 
     while (check_param != 0 || check_device != 0) {
-        // Funzione che controlla se i parametri sono positivi
+        
         check_param = param_control(mylivella);
-        // Funzione che controlla se i parametri sono consistenti tra loro
         check_device = device_control(mylivella);
     }
 
     
-    // Informazioni sulle parti del meccanismo
-    cout << "Informazioni su pistoni e piastra:" << endl;
+    cout << "Informazioni su pistoni e piastra:" << endl << endl;
     info_parti(mylivella);
 
 
-    // Creazione del file .svg
     string NameFile = "";
+    char with_measures;
     cout << "Inserire il nome del file .svg che verrà creato: ";
     cin >> NameFile;
-
-    char with_measures;
     cout << "Includere le misure nel file .svg ?  Y/n: ";
     cin >> with_measures;
 
     livella_to_svg(mylivella, "../" + NameFile, with_measures);
 
 
-    // Distruggi istanze della struct Livella
     livella_destroy(mylivella);
 
     return EXIT_SUCCESS;

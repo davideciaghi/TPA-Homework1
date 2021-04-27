@@ -1,6 +1,6 @@
 # Descrizione libreria: Livella.h
 
-La libreria Livella.h contiene diverse funzioni atte alla creazione di un file formato .svg atto a realizzare una struttura inclinata controllata mediante l'estensione di due pistoni posizionati alle estremità.
+La libreria Livella.h contiene diverse funzioni atte alla creazione di un file formato .svg al fine di realizzare una struttura inclinata controllata mediante l'estensione di due pistoni posizionati alle estremità.
 
 ## Descrizione delle funzioni implementate:
 
