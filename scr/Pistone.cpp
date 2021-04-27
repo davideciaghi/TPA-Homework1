@@ -291,7 +291,7 @@ void info_parti ( Livella * mylivella){
 
 
 
-void livella_to_svg (Livella * mylivella, string fileName, bool measures ){
+void livella_to_svg (Livella * mylivella, string fileName, char measures ){
 
     
 
@@ -309,7 +309,7 @@ void livella_to_svg (Livella * mylivella, string fileName, bool measures ){
     mySVG << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>" << endl;
     mySVG << "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"800\" height=\"600\">" << endl;
     mySVG << livella_to_ParamSVG( mylivella );
-    if (measures == 1) {
+    if (measures == 'Y') {
 
         mySVG << livella_to_MeasureSVG( mylivella );
     }

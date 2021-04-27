@@ -121,7 +121,7 @@
 
 
     // Funzione per la creeazione del file .svg
-    void livella_to_svg (Livella * mylivella, std::string fileName, bool measures);
+    void livella_to_svg (Livella * mylivella, std::string fileName, char measures);
 
 
     // Funzione stringa per implementazione del file svg.
