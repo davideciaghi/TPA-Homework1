@@ -230,32 +230,32 @@ void device_control(Livella * mylivella) {
     float new_param;
 
     if (mylivella->mypiston2->pos_x1 <= (mylivella->mypiston1->pos_x1 + mylivella->mypiston1->larg_1)) {
-        cout << "Distanza tra i pistoni non sufficientemente grande, reinserire la coordinata x del secondo pistone: " << endl;
+        cout << "Distanza tra i pistoni non sufficientemente grande, reinserire la coordinata x del secondo pistone: ";
         cin >> new_param;
         piston_set_pos(mylivella, new_param);
     }
     if (mylivella->mypiston1->larg_1 <= mylivella->mypiston1->larg_2) {
-        cout << "La larghezza del cilindro interno deve essere minore di quella del cilindro esterno, reinserire la larghezza del cilindro interno: " << endl;
+        cout << "La larghezza del cilindro interno deve essere minore di quella del cilindro esterno, reinserire la larghezza del cilindro interno: ";
         cin >> new_param;
         piston_set_larg2(mylivella, new_param);
     }
     if (mylivella->mypiston1->alt_2 > mylivella->mypiston1->alt_1) {
-        cout << "L'estensione del pistone non può essere maggiore della lunghezza del cilindro esterno, reinserire l'estensione del pistone di sinistra: " << endl;
+        cout << "L'estensione del pistone non può essere maggiore della lunghezza del cilindro esterno, reinserire l'estensione del pistone di sinistra: ";
         cin >> new_param;
         piston_set_alt1(mylivella, new_param);
     }
     if (mylivella->mypiston2->alt_2 > mylivella->mypiston2->alt_1) {
-        cout << "L'estensione del pistone non può essere maggiore della lunghezza del cilindro esterno, reinserire l'estensione del pistone di destra: " << endl;
+        cout << "L'estensione del pistone non può essere maggiore della lunghezza del cilindro esterno, reinserire l'estensione del pistone di destra: ";
         cin >> new_param;
         piston_set_alt2(mylivella, new_param);
     }
     if (mylivella->myplate->spessore >= mylivella->mypiston1->alt_1) {
-        cout << "Lo spessore della piastra non deve eccedere l'altezza del cilindro esterno: " << endl;
+        cout << "Lo spessore della piastra non deve eccedere l'altezza del cilindro esterno: ";
         cin >> new_param;
         plate_set_spessore(mylivella, new_param);
     }
     if (mylivella->myplate->lunghezza < (mylivella->mypiston2->pos_x1 - mylivella->mypiston1->pos_x1 - mylivella->mypiston1->larg_1)) {
-        cout << "La lunghezza della piastra non può essere inferiore alla distanza delgi estremi dei due cilindri: " << endl;
+        cout << "La lunghezza della piastra non può essere inferiore alla distanza delgi estremi dei due cilindri: ";
         cin >> new_param;
         plate_set_lunghezza(mylivella, new_param);
     }
