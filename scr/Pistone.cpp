@@ -213,7 +213,6 @@ void param_control(Livella * mylivella) {
         plate_set_lunghezza(mylivella, new_param);
     }
 
-
     cout << "Fine controllo segni dati" << endl;
 
 
@@ -255,7 +254,7 @@ void device_control(Livella * mylivella) {
         plate_set_spessore(mylivella, new_param);
     }
     if (mylivella->myplate->lunghezza < (mylivella->mypiston2->pos_x1 - mylivella->mypiston1->pos_x1 - mylivella->mypiston1->larg_1)) {
-        cout << "La lunghezza della piastra non può essere inferiore alla distanza delgi estremi dei due cilindri: ";
+        cout << "La lunghezza della piastra non può essere inferiore alla distanza degli estremi dei due cilindri: ";
         cin >> new_param;
         plate_set_lunghezza(mylivella, new_param);
     }
