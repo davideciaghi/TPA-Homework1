@@ -21,6 +21,8 @@ Il device può essere utile nell'accoppiamento con un altro device per regolarne
 * La lunghezza del cilindro interno non deve eccedere quella del cilindro esterno
 * La larghezza del cilindro interno non deve essere maggiore di quella del cilindro esterno
 * La lunghezza della piastra non deve essere minore della distanza tra gli estremi dei cilindri
+* Lo spessore della piastra non deve essere maggiore dell'altezza dei cilindri esterni
+* I pistoni non devono intersecarsi
 
 
 #### Parametri dei pistoni:
