@@ -9,7 +9,7 @@ int main() {
     
 
     // Funzione di inserimento dei parametri
-    mylivella = livella_init(100,500,400,150,50,20,30,70,30,500);
+    mylivella = livella_init(100,500,400,150,0,20,30,70,30,500);
 
 
     // Funzione che controlla se i parametri sono positivi
