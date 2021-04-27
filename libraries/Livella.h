@@ -71,6 +71,11 @@
     };
 
     
+
+     Livella * livella_init();
+
+
+
     /*
      * Funzione che inizializza il pistone
      * 
@@ -98,7 +103,7 @@
 
     
     
-    Livella * livella_init(float posx1, float posx2, float posy, float alt1, float larg1, float larg2, float altS, float altD, float spess, float lung);
+   
 
 
 

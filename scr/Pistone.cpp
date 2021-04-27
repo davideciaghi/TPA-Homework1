@@ -11,34 +11,34 @@ using namespace std;
 
 
 
-Livella * livella_init(float posx1, float posx2, float posy, float alt1, float larg1,float larg2, float altS, float altD, float spess, float lung){
+Livella * livella_init(){
 
     Livella * livellaC  = new Livella;
 
+    float posx1, posx2, posy, alt1, larg1, larg2, altS, altD, spess, lung;
     
-    /*
-     * cout << "Inserire posizione x del primo pistone:";
-     *   cin >> posx1;
-     *   cout << "Inserire posizione x del secondo pistone:";
-     *   cin >> posx2;
-     *   cout << "Inserire posizione y dei due pistoni:";
-     *   cin >> posy;
-     *   cout << "Inserire altezza del cilindro esterno:";
-     *   cin >> alt1;
-     *   cout << "Inserire larghezza del cilindro esterno:";
-     *  cin >> larg1;
-     *    cout << "Inserire larghezza del cilindo interno:";
-     *   cin >> larg2;
-     *  cout << "Inserire estensione del del primo pistone:";
-     *   cin >> altS;
-     *   cout << "Inserire estensione del secondo pistone:";
-     *   cin >> altD;
-     *   cout << "Inserire spessore della piastra:";
-     *   cin >> spess;
-     *   cout << "Inserire lunghezza della piastra:";
-     *   cin >> lung;
-     * 
-     */
+    
+     cout << "Inserire posizione x del primo pistone:";
+     cin >> posx1;
+     cout << "Inserire posizione x del secondo pistone:";
+     cin >> posx2;
+     cout << "Inserire posizione y dei due pistoni:";
+     cin >> posy;
+     cout << "Inserire altezza del cilindro esterno:";
+     cin >> alt1;
+     cout << "Inserire larghezza del cilindro esterno:";
+     cin >> larg1;
+     cout << "Inserire larghezza del cilindo interno:";
+     cin >> larg2;
+     cout << "Inserire estensione del del primo pistone:";
+     cin >> altS;
+     cout << "Inserire estensione del secondo pistone:";
+     cin >> altD;
+     cout << "Inserire spessore della piastra:";
+     cin >> spess;
+     cout << "Inserire lunghezza della piastra:";
+     cin >> lung;
+     
 
     livellaC -> mypiston1 = piston_init(posx1, posy, alt1, larg1, altS, larg2);
     livellaC -> mypiston2 = piston_init(posx2, posy, alt1, larg1, altD, larg2);
