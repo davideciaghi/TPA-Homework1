@@ -5,8 +5,6 @@ La funzione del meccanismo è quella di regolare l'inclinazione di una piastra u
 Il pistone di sinistra è connesso alla piastra mediante una coppia rotoidale, mentre il pistone di destra tramite una coppia a camma che permette una traslazione relativa dei membri connessi.
 
 Il device può essere utile nell'accoppiamento con un altro device per regolarne il posizionamento e l'inclinazione.
-
-
 ![](Pistone.svg)
 
 
