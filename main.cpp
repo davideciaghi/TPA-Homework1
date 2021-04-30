@@ -10,7 +10,7 @@ int main() {
     Livella * mylivella;
 
     // mylivella = livella_from_console();
-    mylivella = livella_init(100,500,400,150,50,20,30,160,30,500);
+    mylivella = livella_init(100,500,400,150,50,20,30,70,30,500);
     
     param_control(mylivella);
 
