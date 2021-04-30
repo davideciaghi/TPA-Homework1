@@ -71,7 +71,15 @@
 
     };
 
-    
+    /*
+     * Funzione che permette di creare una livella da console iniziando internamente i valori
+     * 
+     * @return puntatore alla livella creata
+     * 
+     */ 
+    Livella * livella_from_console();
+
+
     /*
      * Funzione di inserimento dei parametri
      * 
@@ -86,7 +94,7 @@
      *  @param lung: lunghezza della piastra
      * 
      */
-     Livella * livella_init();
+     Livella * livella_init(float posx1, float posx2, float posy, float larg1, float larg2, float alt1, float altS, float altD, float spess, float lung);
 
 
   
