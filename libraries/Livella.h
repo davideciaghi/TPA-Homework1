@@ -94,7 +94,7 @@
      *  @param lung: lunghezza della piastra
      * 
      */
-     Livella * livella_init(float posx1, float posx2, float posy, float larg1, float larg2, float alt1, float altS, float altD, float spess, float lung);
+     Livella * livella_init(float posx1, float posx2, float posy, float alt1, float larg1, float larg2, float altS, float altD, float spess, float lung);
 
 
   
@@ -170,8 +170,19 @@
     void plate_set_spessore(Livella * mylivella);
     void plate_set_lunghezza(Livella * mylivella);
 
+
+
+    /*
+     * Funzione che controlla il segno dei parametri inseriti, dunque che non siano negativi o nulli
+     * 
+     */
     int param_control(Livella * mylivella);
 
+
+    /*
+     * Funzione che controlla la coerenza dei parametri inseriti al fine di rispettare i vincoli costruttivi del device
+     * 
+     */
     int device_control(Livella * mylivella);
 
 
