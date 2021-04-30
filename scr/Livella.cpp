@@ -10,11 +10,9 @@
 using namespace std;
 
 
-// Inizializzazione dei parametri del device
 
-Livella * livella_init(){
-
-    Livella * livellaC  = new Livella;
+// Funzione per creare una livella da console
+Livella * livella_from_console(){
 
     float posx1, posx2, posy, alt1, larg1, larg2, altS, altD, spess, lung;
     
@@ -38,14 +36,21 @@ Livella * livella_init(){
      cin >> spess;
      cout << "Inserire lunghezza della piastra:";
      cin >> lung;
-     
-    livellaC -> mypiston1 = piston_init(posx1, posy, alt1, larg1, altS, larg2);
-    livellaC -> mypiston2 = piston_init(posx2, posy, alt1, larg1, altD, larg2);
-    livellaC -> myplate = plate_init(spess, lung, posx1, posx2, posy, alt1, larg1, altS, altD, larg2);
 
-
-    return livellaC;
+    return livella_init(posx1, posx2, posy, larg1, larg2, alt1, altS, altD, spess, lung);
     
+}
+
+
+// Inizializzazione dei parametri del device
+Livella * livella_init(float posx1, float posx2, float posy, float larg1, float larg2, float alt1, float altS, float altD, float spess, float lung){
+
+    Livella * new_livella = new Livella;
+
+    new_livella -> mypiston1 = piston_init(posx1, posy, alt1, larg1, altS, larg2);
+    new_livella -> mypiston2 = piston_init(posx2, posy, alt1, larg1, altD, larg2);
+    new_livella -> myplate = plate_init(spess, lung, posx1, posx2, posy, alt1, larg1, altS, altD, larg2);
+
 }
 
 
