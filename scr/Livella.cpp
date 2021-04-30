@@ -78,7 +78,6 @@ Piston* piston_init (float posx, float posy, float alt1, float larg1, float alt2
     pistonC->pos_cy = pistonC->pos_y1 - pistonC->alt_2;
 
     return pistonC;
-
 }
 
 
@@ -107,7 +106,6 @@ Plate* plate_init (float spess, float lungh, float posx1, float posx2, float pos
 
 
 // Funzione che permette di cambiare la posizione del secondo pistone.
-
 void piston_set_pos(Livella * mylivella, float new_param) {  
     mylivella->mypiston2->pos_x1 = new_param;
     mylivella->mypiston2->pos_x2 = mylivella->mypiston2->pos_x1 + ((mylivella->mypiston2->larg_1 - mylivella->mypiston2->larg_2)/2);
@@ -117,14 +115,12 @@ void piston_set_pos(Livella * mylivella, float new_param) {
 }
 
 // Funzione che permette di cambiare l'altezza dei cilindri esterni.
-
 void piston_set_alt(Livella * mylivella, float new_param) { 
     mylivella->mypiston1->alt_1 = new_param;
     mylivella->mypiston2->alt_1 = new_param;
 }
 
 // Funzione che permette di cambiare la larghezza dei cilindri esterni.
-
 void piston_set_larg1(Livella * mylivella, float new_param) { 
     mylivella->mypiston1->larg_1 = new_param;
     mylivella->mypiston2->larg_1 = new_param;
@@ -139,7 +135,6 @@ void piston_set_larg1(Livella * mylivella, float new_param) {
 }
 
 // Funzione che permette di cambiare l'estensione del primo pistone.
-
 void piston_set_alt1(Livella * mylivella, float new_param) { 
     mylivella->mypiston1->alt_2 = new_param;
     mylivella->mypiston1->pos_y2 = mylivella->mypiston1->pos_y1 - mylivella->mypiston1->alt_2;
@@ -150,7 +145,6 @@ void piston_set_alt1(Livella * mylivella, float new_param) {
 }
 
 // Funzione che permette di cambiare l'estensione del secondo pistone.
-
 void piston_set_alt2(Livella * mylivella, float new_param) { 
     mylivella->mypiston2->alt_2 = new_param;
     mylivella->mypiston2->pos_y2 = mylivella->mypiston2->pos_y1 - mylivella->mypiston2->alt_2;
@@ -160,7 +154,6 @@ void piston_set_alt2(Livella * mylivella, float new_param) {
 }
 
 // Funzione che permette di cambiare la larghezza dei due cilindri interni.
-
 void piston_set_larg2(Livella * mylivella, float new_param) { 
     mylivella->mypiston1->larg_2 = new_param;
     mylivella->mypiston2->larg_2 = new_param;
@@ -171,14 +164,12 @@ void piston_set_larg2(Livella * mylivella, float new_param) {
 }
 
 // Funzione che permette di cambiare lo spessore della piastra.
-
 void plate_set_spessore(Livella * mylivella, float new_param) { 
     mylivella->myplate->spessore = new_param;
     mylivella->myplate->pos_y = mylivella->myplate->pos_cyS - (mylivella->myplate->spessore / 2);
 }
 
 // Funzione che permette di cambiare la lunghezza della piastra.
-
 void plate_set_lunghezza(Livella * mylivella, float new_param) { 
     mylivella->myplate->lunghezza = new_param;
 }
@@ -225,7 +216,6 @@ int param_control(Livella * mylivella) {
         cin >> new_param;
         plate_set_lunghezza(mylivella, new_param);
     }
-
 }
 
 
@@ -273,7 +263,6 @@ int device_control(Livella * mylivella) {
         plate_set_lunghezza(mylivella, new_param);
         param_control(mylivella);
     }
-
 }
 
 
