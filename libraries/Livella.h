@@ -170,7 +170,9 @@
     void plate_set_spessore(Livella * mylivella);
     void plate_set_lunghezza(Livella * mylivella);
 
-    
+    int param_control(Livella * mylivella);
+
+    int device_control(Livella * mylivella);
 
 
     /*
