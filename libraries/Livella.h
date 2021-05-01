@@ -161,14 +161,14 @@
      * plate_set_lunghezza: funzione che permette di cambiare la lunghezza della piastra.
      * 
      */
-    void piston_set_pos(Livella * mylivella);
-    void piston_set_alt(Livella * mylivella);
-    void piston_set_larg1(Livella * mylivella);
-    void piston_set_alt1(Livella * mylivella);
-    void piston_set_alt2(Livella * mylivella);
-    void piston_set_larg2(Livella * mylivella);
-    void plate_set_spessore(Livella * mylivella);
-    void plate_set_lunghezza(Livella * mylivella);
+    void piston_set_pos(Livella * mylivella, float new_param);
+    void piston_set_alt(Livella * mylivella, float new_param);
+    void piston_set_larg1(Livella * mylivella, float new_param);
+    void piston_set_alt1(Livella * mylivella, float new_param);
+    void piston_set_alt2(Livella * mylivella, float new_param);
+    void piston_set_larg2(Livella * mylivella, float new_param);
+    void plate_set_spessore(Livella * mylivella, float new_param);
+    void plate_set_lunghezza(Livella * mylivella, float new_param);
 
 
 
