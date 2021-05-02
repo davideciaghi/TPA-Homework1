@@ -45,7 +45,7 @@ Connection * aggancio_init(Machine * machine) {
     // La lunghezza della guida prismatica coincide con la distanza della prima coppia rotoidale e la fine delal piastra della livella
     conn->est = machine->livella->myplate->lunghezza - 50 - (machine->livella->myplate->spessore)/2;
 
-    // Il centro della guida prismatica
+    // Coordinate centro della guida prismatica
     conn->posx = machine->livella->mypiston1->pos_cx + (conn->est)/2;
     conn->posy = machine->livella->mypiston1->pos_cy;
     
