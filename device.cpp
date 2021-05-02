@@ -1,5 +1,5 @@
 #include <iostream>
-#include "libreries/guida.h"
+#include "libraries/guida.h"
 
 using namespace std;
 
@@ -7,7 +7,7 @@ int main() {
 
     GuidaPrismatica * myguida;
 
-    myguida = guida_init(400, 300, 400, 130, 40, 60);
+    myguida = guida_init(0, 0, 400, 130, 40, 40);
 
     guida_to_SVG(myguida, "test", false);
 
