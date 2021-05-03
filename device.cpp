@@ -18,3 +18,4 @@ int main() {
     guida_distruggi( myguida );
     return EXIT_SUCCESS;
 }
+

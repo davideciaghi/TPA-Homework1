@@ -51,11 +51,43 @@ Connection * aggancio_init(Machine * machine) {
     
     // Corsa della guida prismatica
     conn->corsa = (machine->livella->mypiston1->pos_cx - machine->livella->mypiston2->pos_cx)/ cos(machine->livella->myplate->angle);
-    
-    
-
 
     return conn;
 
 }
+
+
+
+void machine_to_svg(Machine * livella2, string fileName, char measures) {
+
+    ofstream mySVG( fileName + ".svg");
+    mySVG << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>" << endl;
+    mySVG << "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"800\" height=\"600\">" << endl;
+
+    mySVG << machine_to_ParamSVG( livella2, measures);
+
+    mySVG << "</svg>";
+    mySVG.close();
+
+}
+
+
+string machine_to_ParamSVG(Machine * livella2, char measures) {
+    
+    string str = "";
+
+    str += livella_to_ParamSVG(livella2->livella);
+
+    if (measures == 'Y') {
+        str += guida_to_SVGstring(livella2->guida, 1);
+        str += livella_to_MeasureSVG(livella2->livella);
+    } else {
+        str += guida_to_SVGstring(livella2->guida, 0);
+
+    }
+
+    return str;
+    
+}
+
 

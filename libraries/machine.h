@@ -48,4 +48,10 @@
 
 
 
+
+    void machine_to_svg(Machine * livella2, std::string fileName, char measures);
+
+
+    std::string machine_to_ParamSVG(Machine * livella2, char measures);
+
 #endif
