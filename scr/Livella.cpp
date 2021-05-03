@@ -271,20 +271,20 @@ int device_control(Livella * mylivella) {
 
 void info_parti ( Livella * mylivella){
     
-    cout << "Pistone di Sinistra: \t\t " << endl;
-    cout << "Posizione pistone:  \t\t" << "x: " << mylivella->mypiston1->pos_x1 <<  ", y: " << mylivella->mypiston1->pos_y1 <<  endl;
-    cout << "Cilindro esterno: \t\t" << "diametro: " << mylivella->mypiston1->larg_1 << ", altezza: " << mylivella->mypiston1->alt_1 << endl;
-    cout << "Cilindro Interno: \t\t" << "diametro: " << mylivella->mypiston1->larg_2 << ", altezza: " << mylivella->mypiston1->alt_2 << endl;
-    cout << "Coordinate coppia rotoidale: \t\t" << "x: " << mylivella->mypiston1->pos_cx <<  ", y: " << mylivella->mypiston1->pos_cy <<  endl;
-    cout << "Pistone di Destra: \t\t " << endl;
-    cout << "Posizione pistone:  \t\t" << "x: " << mylivella->mypiston2->pos_x1 <<  ", y: " << mylivella->mypiston2->pos_y1 <<  endl;
-    cout << "Cilindro esterno: \t\t" << "diametro: " << mylivella->mypiston2->larg_1 << ", altezza: " << mylivella->mypiston2->alt_1 << endl;
-    cout << "Cilindro interno: \t\t" << "diametro: " << mylivella->mypiston2->larg_2 << ", altezza: " << mylivella->mypiston2->alt_2 << endl;
-    cout << "Coordinate coppia rotoidale: \t" << "x: " << mylivella->mypiston2->pos_cx <<  ", y: " << mylivella->mypiston2->pos_cy <<  endl;
-    cout << "Piastra: \t\t " << endl;
-    cout << "Spessore piastra: \t 30" <<  endl;
-    cout << "Lunghezza piastra: \t\t 500" << endl;
-    cout << "Angolo di inclinazione: \t\t" << mylivella->myplate->angle << endl;
+    cout << "> Pistone di Sinistra: \t\t " << endl;
+    cout << "> Posizione pistone:  \t\t" << "x: " << mylivella->mypiston1->pos_x1 <<  ", y: " << mylivella->mypiston1->pos_y1 <<  endl;
+    cout << "> Cilindro esterno: \t\t" << "diametro: " << mylivella->mypiston1->larg_1 << ", altezza: " << mylivella->mypiston1->alt_1 << endl;
+    cout << "> Cilindro Interno: \t\t" << "diametro: " << mylivella->mypiston1->larg_2 << ", altezza: " << mylivella->mypiston1->alt_2 << endl;
+    cout << "> Coordinate coppia rotoidale: \t" << "x: " << mylivella->mypiston1->pos_cx <<  ", y: " << mylivella->mypiston1->pos_cy <<  endl;
+    cout << "> Pistone di Destra: \t\t " << endl;
+    cout << "> Posizione pistone:  \t\t" << "x: " << mylivella->mypiston2->pos_x1 <<  ", y: " << mylivella->mypiston2->pos_y1 <<  endl;
+    cout << "> Cilindro esterno: \t\t" << "diametro: " << mylivella->mypiston2->larg_1 << ", altezza: " << mylivella->mypiston2->alt_1 << endl;
+    cout << "> Cilindro interno: \t\t" << "diametro: " << mylivella->mypiston2->larg_2 << ", altezza: " << mylivella->mypiston2->alt_2 << endl;
+    cout << "> Coordinate coppia rotoidale: \t" << "x: " << mylivella->mypiston2->pos_cx <<  ", y: " << mylivella->mypiston2->pos_cy <<  endl;
+    cout << "> Piastra: \t\t " << endl;
+    cout << "> Spessore piastra: \t\t 30" <<  endl;
+    cout << "> Lunghezza piastra: \t\t 500" << endl;
+    cout << "> Angolo di inclinazione: \t" << mylivella->myplate->angle << "°" << endl;
 
 }
 

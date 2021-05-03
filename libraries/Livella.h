@@ -62,7 +62,7 @@
     };
 
 
- 
+    
     struct Livella {
 
         Piston * mypiston1;
@@ -81,7 +81,7 @@
 
 
     /*
-     * Funzione di inserimento dei parametri
+     * Funzione di inizializzazione della livella
      * 
      *  @param posx1: posizione x del cilindro esterno
      *  @param posy: posizione y dei cilindri esterni
