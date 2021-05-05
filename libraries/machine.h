@@ -48,7 +48,7 @@
      *  @param guida: istanza della struct GuidaPrismatica
      * 
      *  @funz livella_init from Livella.h per inizializzare la livella
-     *  @funz guida_init from guida.h per inizializzare la guida prismatica
+     *  @funz guida_init from guida.h per inizializzare la guida prismatica e controllare l'integrità dei parametri
      * 
      *  @return machine: ritorna l'istanza machine
      * 
@@ -121,5 +121,13 @@
      * 
      */ 
     void machine_print_info(Machine * livellaMac);
+
+
+    /*
+     * Funzione distruggi machine
+     * 
+     */ 
+    void machine_destroy(Machine * livellaMac);
+
 
 #endif

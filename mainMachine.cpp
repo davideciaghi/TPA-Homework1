@@ -7,9 +7,10 @@ using namespace std;
 
 int main() {
 
-    //                                posx1 posx2  posy  alt1 larg1 larg2  altS altD spess lungh
+    //                                  posx1 posx2  posy alt1 larg1 larg2  altS  altD spess  lungh
     Machine * livellaMac = machine_init( 100,  250,  400,  150,  50,   20,    30,  100,  30,   500);
 
+    machine_print_info(livellaMac);
 
     string NameFile = "";
     char with_measures;
@@ -20,21 +21,7 @@ int main() {
 
     machine_to_svg(livellaMac, "../" + NameFile, with_measures);
     
-    machine_print_info(livellaMac);
-
-    
-
-
-
-    /*
-    my_destroy_device(livella);
-    my_destroy_device(guida);
-
-
-     delete[] arr;
-    */
-
-   
+    machine_destroy(livellaMac);
 
     return 0;
 
