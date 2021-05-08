@@ -12,30 +12,67 @@
 using namespace std;
 
 
+Machine * machine_from_console(){
+
+    Machine * first_machine;
+
+    float posx1, posx2, posy, alt1, larg1, larg2, altS, altD, spess, lung;
+    
+     cout << "Inserire posizione x del primo pistone: ";
+     cin >> posx1;
+     cout << "Inserire posizione x del secondo pistone: ";
+     cin >> posx2;
+     cout << "Inserire posizione y dei due pistoni: ";
+     cin >> posy;
+     cout << "Inserire altezza del cilindro esterno: ";
+     cin >> alt1;
+     cout << "Inserire larghezza del cilindro esterno: ";
+     cin >> larg1;
+     cout << "Inserire larghezza del cilindo interno: ";
+     cin >> larg2;
+     cout << "Inserire estensione del del primo pistone: ";
+     cin >> altS;
+     cout << "Inserire estensione del secondo pistone: ";
+     cin >> altD;
+     cout << "Inserire spessore della piastra: ";
+     cin >> spess;
+     cout << "Inserire lunghezza della piastra: ";
+     cin >> lung;
+
+    first_machine = machine_init(posx1, posx2, posy, alt1, larg1, larg2, altS, altD, spess, lung);
+
+    return first_machine;
+    
+}
+
+
+
 // Funzione di inizializzazione della machine
 Machine * machine_init(float posx1, float posx2, float posy, float alt1, float larg1, float larg2, float altS, float altD, float spess, float lung) {
 
     Machine * machine = new Machine;
 
-    // Inizializzazione della livella e controllo integrità dei parametri
+    // Inizializzazione della livella e controllo integrità dei parametri direttmente dentro la funzione init.
     machine->livella = livella_init(posx1, posx2, posy, alt1, larg1, larg2, altS, altD, spess, lung);
     
-    // Controllo e modifica dei parametri della livella, solo se la livella è consistente allora posso costruire la guida prismatica
-    param_control(machine->livella);
-    device_control(machine->livella);
+    // Solo se la livella è corretta vado a costruire la guida
+    if (machine->livella == NULL) {
 
-    // Calcolo della corsa, lunghezze e posizione della guida prismatica
-    machine->aggancio = aggancio_init(machine);
+        cout << endl << "Procedo con la distruzione della machine." << endl;
+        livella_destroy(machine->livella);
+        return NULL;
 
-    // Inizializzazione della guida prismatica
-    machine->guida = guida_init (machine->aggancio->posx, machine->aggancio->posy, machine->aggancio->est, machine->aggancio->corsa, spess*0.7, spess*0.7);
-    
-    if( machine->guida == NULL ) {
-        cout << "Errore nei parametri! Non sono riuscito a creare una struttura consistente, riprovare." << endl << endl;
-        machine = NULL;
+    } else {
+
+        // Calcolo della corsa, lunghezze e posizione della guida prismatica
+        machine->aggancio = aggancio_init(machine);
+
+        // Inizializzazione della guida prismatica
+        machine->guida = guida_init (machine->aggancio->posx, machine->aggancio->posy, machine->aggancio->est, machine->aggancio->corsa, spess*0.7, spess*0.7);
+        
+        return machine;
+
     }
-
-    return machine;
 }
 
 
@@ -57,18 +94,51 @@ Connection * aggancio_init(Machine * machine) {
 }
 
 
+// Funzione che stampa i parametri della machine 
+void machine_print_info(Machine * livellaMac) {
+    
+    if (livellaMac == NULL) {
+
+        cout << endl << "Impossibile riportare le informazioni della machine." << endl;
+
+    } else {
+
+        cout << endl << "Informazioni sulla livella:" << endl << endl;
+        info_parti(livellaMac->livella);
+        cout << endl << "Informazioni sulla guida:" << endl << endl;
+        guida_visualizza_info(livellaMac->guida);
+    }
+}
+
+
+
 // Funzione che realizza il file svg
-void machine_to_svg(Machine * livellaMac, string fileName, char measures) {
+void machine_to_svg(Machine * livellaMac) {
 
-    ofstream mySVG( fileName + ".svg");
-    mySVG << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>" << endl;
-    mySVG << "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"800\" height=\"600\">" << endl;
+    if (livellaMac == NULL) {
 
-    mySVG << machine_to_ParamSVG( livellaMac, measures);
+        cout << endl << "Impossibile creare la livella nel file svg." << endl;
 
-    mySVG << "</svg>";
-    mySVG.close();
+    } else {
 
+        string fileName = "";
+        char measures;
+        cout << endl << "Inserire il nome del file .svg che verrà creato: ";
+        cin >> fileName;
+        cout << endl << "Includere le misure nel file .svg ?  Y/n: ";
+        cin >> measures;
+
+        ofstream mySVG("../" + fileName + ".svg");
+        mySVG << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>" << endl;
+        mySVG << "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"800\" height=\"600\">" << endl;
+
+        mySVG << machine_to_ParamSVG( livellaMac, measures);
+
+        mySVG << "</svg>";
+        mySVG.close();
+
+
+    }
 }
 
 // Funzione che implementa nel file svg la livella e la guida
@@ -101,24 +171,22 @@ string rotated_guida(Machine * livellaMac, bool measures) {
 }
 
 
-// Funzione che stampa i parametri della machine 
-void machine_print_info(Machine * livellaMac) {
-
-    cout << endl << "Informazioni sulla livella:" << endl << endl;
-    info_parti(livellaMac->livella);
-    cout << endl << "Informazioni sulla guida:" << endl << endl;
-    guida_visualizza_info(livellaMac->guida);
-
-}
-
 
 // Funzione distruggi machine
 void machine_destroy(Machine * livellaMac) {
     
+    if (livellaMac == NULL) {
+
+        cout << endl << "Machine distrutta correttamente." << endl << endl;
+        return;
+    } 
+
     delete livellaMac->livella->mypiston1;
     delete livellaMac->livella->mypiston2;
     delete livellaMac->livella->myplate;
     delete livellaMac->guida;
     delete livellaMac;
+
+    cout << endl << "Machine distrutta correttamente." << endl << endl; 
     
 }

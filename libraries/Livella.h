@@ -72,7 +72,7 @@
     };
 
     /*
-     * Funzione che permette di creare una livella da console iniziando internamente i valori
+     * Funzione che permette di creare una livella da console inizializzando internamente i valori
      * 
      * @return puntatore alla livella creata
      * 
@@ -129,8 +129,12 @@
      */
     Plate * plate_init (float spess, float lung, float posx1, float posx2, float posy, float alt1, float larg1, float altS, float altD, float larg2);
 
-    
 
+    /*
+     * Funzione che fa partire la valutazione dei parametri ed in caso li corregge,
+     * attraverso le funzioni param_control e device_control.
+     * 
+     */
     void livella_control(Livella * mylivella);
 
 

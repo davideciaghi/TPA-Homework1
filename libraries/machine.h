@@ -41,6 +41,15 @@
 
 
     /*
+     * Funzione che permette di creare una machine da console inizializzando internamente i valori
+     * 
+     * @return puntatore alla livella creata
+     * 
+     */ 
+    Machine * machine_from_console();
+
+
+    /*
      * Funzione di inizializzazione della machine
      * 
      *  @param livella: istanza della struct Livella
@@ -75,11 +84,9 @@
      * Funzione che realizza il file svg
      * 
      * @param livellaMac: istanza della machine dalla quale prelevare i parametri
-     * @param fileName: nome del fine svg dato dall'utente
-     * @param measures: carattere di scelta per le misure all'interno del file svg
      * 
      */ 
-    void machine_to_svg(Machine * livellaMac, std::string fileName, char measures);
+    void machine_to_svg(Machine * livellaMac);
 
 
     /*

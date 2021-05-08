@@ -9,4 +9,9 @@
 </g> 
 <circle cx="125.000000" cy="370.000000" r="20" stroke="black" stroke-width="3" fill="lightgrey" /> 
 <circle cx="525.000000" cy="330.000000" r="20" stroke="black" stroke-width="3" fill="lightgrey" /> 
-</svg>
+<g transform="rotate(-5.710593,125.000000,370.000000)"> 
+	<rect  x = "-217.500000" y="-3.500000" width="435.000000" height="7.000000" style="fill:rgb(210,210,210);stroke-width:1;stroke:rgb(0,0,0)" transform="matrix(1.000000 0.000000 -0.000000 1.000000 342.500000 370.000000)"  /> 
+	<rect  x = "-228.000000" y="-10.500000" width="21.000000" height="21.000000" style="fill:rgb(130,130,130);stroke-width:3;stroke:rgb(0,0,0)" transform="matrix(1.000000 0.000000 -0.000000 1.000000 342.500000 370.000000)"  /> 
+	<rect  x = "207.000000" y="-10.500000" width="21.000000" height="21.000000" style="fill:rgb(130,130,130);stroke-width:3;stroke:rgb(0,0,0)" transform="matrix(1.000000 0.000000 -0.000000 1.000000 342.500000 370.000000)"  /> 
+	<rect  x = "173.995026" y="-10.500000" width="21.000000" height="21.000000" style="fill:rgb(130,130,130);stroke-width:3;stroke:rgb(0,0,0)" transform="matrix(1.000000 0.000000 -0.000000 1.000000 342.500000 370.000000)"  /> 
+</g></svg>

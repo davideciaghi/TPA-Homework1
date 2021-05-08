@@ -18,30 +18,33 @@ Livella * livella_from_console(){
 
     float posx1, posx2, posy, alt1, larg1, larg2, altS, altD, spess, lung;
     
-     cout << "Inserire posizione x del primo pistone:";
+     cout << "Inserire posizione x del primo pistone: ";
      cin >> posx1;
-     cout << "Inserire posizione x del secondo pistone:";
+     cout << "Inserire posizione x del secondo pistone: ";
      cin >> posx2;
-     cout << "Inserire posizione y dei due pistoni:";
+     cout << "Inserire posizione y dei due pistoni: ";
      cin >> posy;
-     cout << "Inserire altezza del cilindro esterno:";
+     cout << "Inserire altezza del cilindro esterno: ";
      cin >> alt1;
-     cout << "Inserire larghezza del cilindro esterno:";
+     cout << "Inserire larghezza del cilindro esterno: ";
      cin >> larg1;
-     cout << "Inserire larghezza del cilindo interno:";
+     cout << "Inserire larghezza del cilindo interno: ";
      cin >> larg2;
-     cout << "Inserire estensione del del primo pistone:";
+     cout << "Inserire estensione del del primo pistone: ";
      cin >> altS;
-     cout << "Inserire estensione del secondo pistone:";
+     cout << "Inserire estensione del secondo pistone: ";
      cin >> altD;
-     cout << "Inserire spessore della piastra:";
+     cout << "Inserire spessore della piastra: ";
      cin >> spess;
-     cout << "Inserire lunghezza della piastra:";
+     cout << "Inserire lunghezza della piastra: ";
      cin >> lung;
-
 
     first_livella = livella_init(posx1, posx2, posy, alt1, larg1, larg2, altS, altD, spess, lung);
 
+    if (first_livella == NULL) {
+
+        livella_destroy(first_livella);
+    }
 
     return first_livella;
     
@@ -66,30 +69,13 @@ Livella * livella_init(float posx1, float posx2, float posy, float alt1, float l
         livella_control(new_livella);
 
     } else {
-        
+
         cout << endl << "Procedo con la distruzione della livella." << endl;
         livella_destroy(new_livella);
         return NULL;
     }
 
-    return new_livella;
-
-
-    /*
-        if (livella_control(new_livella)){
-        
-        cout << endl << "I parametri della livella sono corretti." << endl;
-        return new_livella;
-
-    } else {
-        
-        cout << endl << "Procedo con la distruzione della livella." << endl;
-        livella_destroy(new_livella);
-        return NULL;
-    }
-    */
-
-    
+    return new_livella;    
 
 }
 
@@ -217,14 +203,8 @@ void plate_set_lunghezza(Livella * mylivella, float new_param) {
 // Valuta se correggere o meno la livella
 void livella_control(Livella * mylivella) {
 
-    char choice;
-    cout << "Continuare con la validazione della livella? Y/n: ";
-    cin >> choice;
-
-    if (choice == 'Y') {
-        param_control(mylivella);
-        device_control(mylivella);
-    }
+    param_control(mylivella);
+    device_control(mylivella);
 }
 
 
@@ -368,7 +348,7 @@ void livella_to_svg (Livella * mylivella){
         cout << endl << "Includere le misure nel file .svg ?  Y/n: ";
         cin >> measures;
 
-        ofstream mySVG( "../" + fileName + ".svg");
+        ofstream mySVG("../" + fileName + ".svg");
         mySVG << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>" << endl;
         mySVG << "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"800\" height=\"600\">" << endl;
         mySVG << livella_to_ParamSVG( mylivella );

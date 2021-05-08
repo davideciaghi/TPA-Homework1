@@ -1,4 +1,6 @@
-# Homework1: Livella
+# Tecniche di Programmazione Avanzata - Homework1
+
+## Device: Livella
 
 ### Introduzione al dispositivo
 La funzione del meccanismo è quella di regolare l'inclinazione di una piastra utilizzando due pistoni ad essa connessi.
@@ -41,3 +43,9 @@ Il device può essere utile nell'accoppiamento con un altro device per regolarne
 * `spess`: spessore della piastra
 * `lungh`: lunghezza della piastra
 
+
+
+## Machine: Livella accoppiata con guida prismatica
+
+### Introduzione al dispositivo
+La machine viene realizzata dall'accoppiamento di una livella e di una guida prismatica. Una volta realizzata la livella, la guida prismatica prismatica viene accoppiata alle coppie rotidali della livella in modo da permettere al secondo pistone della livella di avere un accoppiamento a camma con la piastra.

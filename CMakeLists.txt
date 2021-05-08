@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 
 # EXECUTABLE SECTION
-add_executable(mainEntry main.cpp)
+add_executable(mainEntry mainMachine.cpp)
 target_include_directories(mainEntry PRIVATE libraries)
 # Class A is not a library: its source file needs to be included in the target sources
 target_sources(mainEntry PRIVATE scr/Livella.cpp
