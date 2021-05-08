@@ -130,7 +130,9 @@
     Plate * plate_init (float spess, float lung, float posx1, float posx2, float posy, float alt1, float larg1, float altS, float altD, float larg2);
 
     
-    
+
+    void livella_control(Livella * mylivella);
+
 
     /*
      * Funzione che controlla che i parametri inseriti siano valori
@@ -197,7 +199,7 @@
      * Dato il nome del file dall'utente, la funzione realizza il file .svg
      * 
      */
-    void livella_to_svg (Livella * mylivella, std::string fileName, char measures);
+    void livella_to_svg (Livella * mylivella);
 
 
     /*
