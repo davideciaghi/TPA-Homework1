@@ -14,8 +14,8 @@ target_include_directories(catch2Test PRIVATE
 
 # Including sources
 target_sources(catch2Test PRIVATE
-        ../scr/Livella.cpp
-        ../scr/guida.cpp
-        ../scr/machine.cpp)
+        ../src/Livella.cpp
+        ../src/guida.cpp
+        ../src/machine.cpp)
 
 #target_compile_options(catch2Test PRIVATE -Wa,-mbig-obj) # Solves assembler error of file too big
