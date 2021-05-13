@@ -5,6 +5,7 @@
     #include <iostream>
 
 
+
     /*
      *  Introduzione ai membri della struct Piston:
      * 
@@ -197,6 +198,14 @@
      * 
      */
     void info_parti ( Livella * mylivella );
+
+
+    /*
+     * Funzione utilizzata per restituisce le misure con precisione a (1) cifra decimale
+     * 
+     */ 
+    std::string myValue (float v);
+
 
 
     /*
