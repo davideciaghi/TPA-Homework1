@@ -65,6 +65,9 @@ Funzione che permette di cambiare la lunghezza della piastra.
 #### `info_parti`
 La funzione stampa sul terminal tutti parametri caratteristici del device.
 
+#### `myValue`
+La funzione imposta le misure del file svg a 1 cifra decimale
+
 #### `livella_to_svg`
 Dato il nome del file dall'utente, la funzione realizza il file .svg
 
