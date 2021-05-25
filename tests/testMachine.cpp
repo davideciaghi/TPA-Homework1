@@ -1,4 +1,3 @@
-
 #include "catch2/catch2.hpp"
 #include "Livella.h"
 #include "guida.h"

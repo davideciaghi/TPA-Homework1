@@ -1,8 +1,5 @@
-
-#define CATCH_CONFIG_MAIN
-
-#include "catch2.hpp"
-#include "../libreries/guida.h"
+#include "catch2/catch2.hpp"
+#include "guida.h"
 
 TEST_CASE("Inizializzazione corretta di un puntatore a guida prismatica", "[GuidaPrismatica:inizializzazione]"){
 
